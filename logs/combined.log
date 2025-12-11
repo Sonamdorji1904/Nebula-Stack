@@ -23,3 +23,34 @@
 {"level":"info","message":"Patient data ingestion completed","patientId":"PID1764829186992","service":"nshqms","timestamp":"2025-12-04T06:19:46.994Z"}
 {"level":"info","message":"MongoDB connected successfully","service":"nshqms","timestamp":"2025-12-04 12:21:26"}
 {"level":"info","message":"NSHQMS server running on port 3000","service":"nshqms","timestamp":"2025-12-04 12:21:26"}
+{"level":"info","message":"MongoDB connected successfully","service":"nshqms","timestamp":"2025-12-04 14:30:28"}
+{"level":"info","message":"NSHQMS server running on port 3000","service":"nshqms","timestamp":"2025-12-04 14:30:28"}
+{"level":"info","message":"GET /health","service":"nshqms","timestamp":"2025-12-04 14:31:11"}
+{"level":"info","message":"GET /api/checkin/register","service":"nshqms","timestamp":"2025-12-04 14:31:44"}
+{"level":"info","message":"POST /api/checkin/register","service":"nshqms","timestamp":"2025-12-04 14:31:58"}
+{"level":"info","message":"Patient registration initiated","service":"nshqms","timestamp":"2025-12-04 14:31:58"}
+{"level":"info","message":"Initiating patient check-in process","service":"nshqms","timestamp":"2025-12-04 14:31:58"}
+{"level":"info","message":"Calling Mock ePIS endpoint: http://localhost:3000/api/mock-epis/checkin","service":"nshqms","timestamp":"2025-12-04 14:31:58"}
+{"level":"info","message":"POST /api/mock-epis/checkin","service":"nshqms","timestamp":"2025-12-04 14:31:58"}
+{"level":"info","message":"Received patient data for: John Doe","service":"nshqms","timestamp":"2025-12-04 14:31:58"}
+{"level":"info","message":"Patient data stored successfully - Patient ID: PID1764837118232","service":"nshqms","timestamp":"2025-12-04 14:31:58"}
+{"level":"info","message":"Patient data ingestion completed","patientId":"PID1764837118232","service":"nshqms","timestamp":"2025-12-04T08:31:58.240Z"}
+{"level":"info","message":"GET /api/checkin/patient/PID1733328123456","service":"nshqms","timestamp":"2025-12-04 14:32:24"}
+{"error":"Patient not found: PID1733328123456","level":"error","message":"Error retrieving patient","patientId":"PID1733328123456","service":"nshqms","timestamp":"2025-12-04 14:32:24"}
+{"error":"Patient not found: PID1733328123456","level":"error","message":"Failed to retrieve patient","service":"nshqms","timestamp":"2025-12-04 14:32:24"}
+{"level":"info","message":"POST /api/checkin/register","service":"nshqms","timestamp":"2025-12-04 14:32:37"}
+{"level":"info","message":"Patient registration initiated","service":"nshqms","timestamp":"2025-12-04 14:32:37"}
+{"level":"info","message":"Initiating patient check-in process","service":"nshqms","timestamp":"2025-12-04 14:32:37"}
+{"level":"info","message":"Calling Mock ePIS endpoint: http://localhost:3000/api/mock-epis/checkin","service":"nshqms","timestamp":"2025-12-04 14:32:37"}
+{"level":"info","message":"POST /api/mock-epis/checkin","service":"nshqms","timestamp":"2025-12-04 14:32:37"}
+{"level":"info","message":"Received patient data for: John Doe","service":"nshqms","timestamp":"2025-12-04 14:32:37"}
+{"level":"info","message":"Patient data stored successfully - Patient ID: PID1764837157940","service":"nshqms","timestamp":"2025-12-04 14:32:37"}
+{"level":"info","message":"Patient data ingestion completed","patientId":"PID1764837157940","service":"nshqms","timestamp":"2025-12-04T08:32:37.942Z"}
+{"level":"info","message":"POST /api/checkin/patient/PID1764837157940","service":"nshqms","timestamp":"2025-12-04 14:32:51"}
+{"level":"info","message":"GET /api/checkin/patient/PID1764837157940","service":"nshqms","timestamp":"2025-12-04 14:32:55"}
+{"level":"info","message":"MongoDB connected successfully","service":"nshqms","timestamp":"2025-12-11 15:54:23"}
+{"level":"info","message":"NSHQMS server running on port 3000","service":"nshqms","timestamp":"2025-12-11 15:54:23"}
+{"level":"info","message":"MongoDB connected successfully","service":"nshqms","timestamp":"2025-12-11 15:56:52"}
+{"level":"info","message":"NSHQMS server running on port 3000","service":"nshqms","timestamp":"2025-12-11 15:56:52"}
+{"level":"info","message":"MongoDB connected successfully","service":"nshqms","timestamp":"2025-12-11 16:04:43"}
+{"level":"info","message":"NSHQMS server running on port 3000","service":"nshqms","timestamp":"2025-12-11 16:04:43"}

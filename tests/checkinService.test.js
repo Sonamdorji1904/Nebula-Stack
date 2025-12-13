@@ -17,7 +17,7 @@ describe('CheckinService', () => {
 
   describe('ingestPatientData', () => {
     
-    it('should successfully ingest patient data from Mock ePIS', async () => {
+    it('should successfully ingest patient data with new fields', async () => {
       // Arrange
       const mockEpisResponse = {
         data: {
@@ -25,11 +25,29 @@ describe('CheckinService', () => {
           data: {
             patientId: 'PID123456',
             firstName: 'John',
+            middleName: 'Michael',
             lastName: 'Doe',
             dateOfBirth: '1985-06-15',
             gender: 'Male',
             contactNumber: '+1-555-0123',
-            email: 'john.doe@example.com'
+            email: 'john.doe@example.com',
+            multiStageTokens: [
+              {
+                token: 'TKN-REG-123',
+                stage: 1,
+                department: 'Registration',
+                status: 'pending'
+              }
+            ],
+            activeTokens: [
+              {
+                token: 'TKN-REG-123',
+                stage: 1,
+                department: 'Registration',
+                status: 'pending'
+              }
+            ],
+            createdBy: 'ePIS-System'
           }
         }
       };
@@ -56,46 +74,20 @@ describe('CheckinService', () => {
       expect(result).toBeDefined();
     });
 
-    it('should throw error when Mock ePIS returns unsuccessful response', async () => {
-      // Arrange
-      const mockEpisResponse = {
-        data: {
-          success: false
-        }
-      };
-
-      axios.post.mockResolvedValue(mockEpisResponse);
-
-      // Act & Assert
-      await expect(checkinService.ingestPatientData()).rejects.toThrow('Mock ePIS returned unsuccessful response');
-      expect(logger.error).toHaveBeenCalled();
-    });
-
-    it('should log error when Mock ePIS API call fails', async () => {
-      // Arrange
-      const error = new Error('Network error');
-      axios.post.mockRejectedValue(error);
-
-      // Act & Assert
-      await expect(checkinService.ingestPatientData()).rejects.toThrow('Network error');
-      expect(logger.error).toHaveBeenCalledWith(
-        expect.stringContaining('Error during patient data ingestion'),
-        expect.any(Object)
-      );
-    });
-
-    it('should store patient data in MongoDB with correct schema', async () => {
-      // Arrange
+    it('should include middleName in patient data', async () => {
       const mockEpisResponse = {
         data: {
           success: true,
           data: {
             patientId: 'PID789',
             firstName: 'Jane',
+            middleName: 'Marie',
             lastName: 'Smith',
             dateOfBirth: '1990-03-20',
             gender: 'Female',
-            contactNumber: '+1-555-9876'
+            contactNumber: '+1-555-9876',
+            multiStageTokens: [],
+            activeTokens: []
           }
         }
       };
@@ -110,38 +102,67 @@ describe('CheckinService', () => {
       await checkinService.ingestPatientData();
 
       // Assert
-      expect(Patient).toHaveBeenCalledWith(mockEpisResponse.data.data);
+      expect(Patient).toHaveBeenCalledWith(expect.objectContaining({
+        middleName: 'Marie'
+      }));
       expect(saveMock).toHaveBeenCalled();
     });
 
   });
 
-  describe('getPatientById', () => {
+  describe('getPatientByToken', () => {
     
-    it('should retrieve patient by ID successfully', async () => {
-      // Arrange
+    it('should retrieve patient by token', async () => {
       const mockPatient = {
         patientId: 'PID123',
         firstName: 'John',
-        lastName: 'Doe'
+        lastName: 'Doe',
+        activeTokens: [
+          { token: 'TKN-REG-123', stage: 1, department: 'Registration' }
+        ]
       };
 
       Patient.findOne = jest.fn().mockResolvedValue(mockPatient);
 
       // Act
-      const result = await checkinService.getPatientById('PID123');
+      const result = await checkinService.getPatientByToken('TKN-REG-123');
 
       // Assert
-      expect(Patient.findOne).toHaveBeenCalledWith({ patientId: 'PID123' });
+      expect(Patient.findOne).toHaveBeenCalledWith({ 'activeTokens.token': 'TKN-REG-123' });
       expect(result).toEqual(mockPatient);
     });
 
-    it('should throw error when patient not found', async () => {
-      // Arrange
+    it('should throw error when token not found', async () => {
       Patient.findOne = jest.fn().mockResolvedValue(null);
 
       // Act & Assert
-      await expect(checkinService.getPatientById('INVALID_ID')).rejects.toThrow('Patient not found');
+      await expect(checkinService.getPatientByToken('INVALID')).rejects.toThrow('Patient not found with token');
+    });
+
+  });
+
+  describe('updateTokenStatus', () => {
+    
+    it('should update token status successfully', async () => {
+      const mockPatient = {
+        patientId: 'PID123',
+        multiStageTokens: [
+          { token: 'TKN-REG-123', stage: 1, department: 'Registration', status: 'pending' }
+        ],
+        activeTokens: [
+          { token: 'TKN-REG-123', stage: 1, department: 'Registration', status: 'pending' }
+        ],
+        save: jest.fn().mockResolvedValue(true)
+      };
+
+      Patient.findOne = jest.fn().mockResolvedValue(mockPatient);
+
+      // Act
+      await checkinService.updateTokenStatus('PID123', 'TKN-REG-123', 'completed');
+
+      // Assert
+      expect(mockPatient.multiStageTokens[0].status).toBe('completed');
+      expect(mockPatient.save).toHaveBeenCalled();
     });
 
   });

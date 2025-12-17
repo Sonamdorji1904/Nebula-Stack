@@ -1,11 +1,22 @@
 // models/Patient.js
 const mongoose = require('mongoose');
 
+// MongoDB Connection String - Add your connection here
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/nshqms';
+
+// Connect to MongoDB (only once when model loads)
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB connected successfully'))
+.catch((err) => console.error('MongoDB connection error:', err));
+
 // Token schema for multi-stage follow-ups
 const tokenSchema = new mongoose.Schema({
-  token: { type: String, required: true, unique: true }, // Unique token per stage/department
-  stage: { type: Number, required: true },              // Stage number
-  department: { type: String, required: true },         // e.g., Registration, Lab, Pharmacy
+  token: { type: String, required: true, unique: true },
+  stage: { type: Number, required: true },
+  department: { type: String, required: true },
   status: { 
     type: String, 
     enum: ['pending','in-progress','completed','cancelled'], 
@@ -27,7 +38,7 @@ const patientSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  middleName: {              // New field
+  middleName: {
     type: String
   },
   lastName: {
@@ -69,15 +80,15 @@ const patientSchema = new mongoose.Schema({
     enum: ['checked-in', 'waiting', 'in-treatment', 'completed'],
     default: 'checked-in'
   },
-  assignedDoctorId: {                      // Future-proof for doctor assignment
+  assignedDoctorId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Doctor'
   },
-  multiStageTokens: [tokenSchema],         // All follow-up stages
-  activeTokens: [tokenSchema],             // Only pending/in-progress tokens
-  lastStageCompletedAt: { type: Date },    // Tracks latest completed stage
-  createdBy: { type: String },             // Audit: who created
-  updatedBy: { type: String }              // Audit: who last updated
+  multiStageTokens: [tokenSchema],
+  activeTokens: [tokenSchema],
+  lastStageCompletedAt: { type: Date },
+  createdBy: { type: String },
+  updatedBy: { type: String }
 }, { timestamps: true });
 
 // Indexes for performance

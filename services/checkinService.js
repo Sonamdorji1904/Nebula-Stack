@@ -35,19 +35,19 @@ class CheckinService {
 
       // Step 3: Store patient data in MongoDB
       const patient = new Patient(patientData);
-      await patient.save();
+      const savedPatient = await patient.save();
 
-      logger.info(`Patient data stored successfully - Patient ID: ${patient.patientId}`);
-      logger.info(`Initial token generated: ${patient.activeTokens[0]?.token}`);
+      logger.info(`Patient data stored successfully - Patient ID: ${savedPatient.patientId}`);
+      logger.info(`Initial token generated: ${savedPatient.activeTokens[0]?.token}`);
 
       // Step 4: Log ingestion event
       logger.info('Patient data ingestion completed', {
-        patientId: patient.patientId,
-        activeTokens: patient.activeTokens.length,
+        patientId: savedPatient.patientId,
+        activeTokens: savedPatient.activeTokens.length,
         timestamp: new Date().toISOString()
       });
 
-      return patient;
+      return savedPatient;
 
     } catch (err) {
       logger.error('Error during patient data ingestion', {

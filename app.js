@@ -8,6 +8,7 @@ require('dotenv').config();
 // Import routes
 const mockEpisRoutes = require('./routes/mockEpis');
 const checkinRoutes = require('./routes/checkin');
+const tokenRoutes = require('./routes/tokenRoutes');
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 // Routes
 app.use('/api/mock-epis', mockEpisRoutes);
 app.use('/api/checkin', checkinRoutes);
+app.use('/api/tokens', tokenRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
@@ -54,7 +56,8 @@ const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/nshqms', {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      tls: true
     });
     logger.info('MongoDB connected successfully');
   } catch (err) {

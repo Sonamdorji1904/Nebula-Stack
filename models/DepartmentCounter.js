@@ -1,24 +1,23 @@
 const mongoose = require('mongoose');
 
-const departmentSchema = new mongoose.Schema(
+const departmentCounterSchema = new mongoose.Schema(
   {
-    name: {
+    department: {
       type: String,
       required: true,
       unique: true
     },
-    code: {
-      type: String,
-      required: true,
-      unique: true,
-      uppercase: true
-    },
-    isActive: {
-      type: Boolean,
-      default: true
+    currentValue: {
+      type: Number,
+      default: 0
     }
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model('Department', departmentSchema);
+departmentCounterSchema.index({ department: 1 }, { unique: true });
+
+module.exports = mongoose.model(
+  'DepartmentCounter',
+  departmentCounterSchema
+);

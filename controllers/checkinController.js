@@ -9,12 +9,10 @@ exports.registerPatient = async (req, res) => {
   try {
     logger.info('Patient registration initiated');
 
-    // Get metadata from request (if any)
     const metadata = {
       createdBy: req.body.createdBy || req.user?.username || 'system'
     };
 
-    // Ingest patient data from Mock ePIS
     const patient = await checkinService.ingestPatientData(metadata);
 
     res.status(201).json({
@@ -27,11 +25,17 @@ exports.registerPatient = async (req, res) => {
         lastName: patient.lastName,
         checkinTimestamp: patient.checkinTimestamp,
         status: patient.status,
+        currentDepartment: patient.currentDepartment,
         activeTokens: patient.activeTokens.map(t => ({
           token: t.token,
-          stage: t.stage,
+          department: t.department
+        })),
+        tokens: patient.multiStageTokens.map(t => ({
+          token: t.token,
           department: t.department,
-          status: t.status
+          stage: t.stage,
+          status: t.status,
+          createdAt: t.createdAt
         }))
       }
     });
@@ -101,7 +105,7 @@ exports.getPatientByToken = async (req, res) => {
 exports.updateTokenStatus = async (req, res) => {
   try {
     const { patientId, token } = req.params;
-    const { status } = req.body;
+    const { status, department } = req.body;
 
     if (!status || !['pending', 'in-progress', 'completed', 'cancelled'].includes(status)) {
       return res.status(400).json({
@@ -110,7 +114,7 @@ exports.updateTokenStatus = async (req, res) => {
       });
     }
 
-    const patient = await checkinService.updateTokenStatus(patientId, token, status);
+    const patient = await checkinService.updateTokenStatus(patientId, token, department, status);
 
     res.status(200).json({
       success: true,
@@ -139,23 +143,32 @@ exports.updateTokenStatus = async (req, res) => {
 exports.addStageToken = async (req, res) => {
   try {
     const { patientId } = req.params;
-    const tokenData = req.body;
+    const { department, stage } = req.body;
 
-    if (!tokenData.stage || !tokenData.department) {
+    if (!department) {
       return res.status(400).json({
         success: false,
-        message: 'Stage and department are required'
+        message: 'Department is required'
       });
     }
 
-    const patient = await checkinService.addStageToken(patientId, tokenData);
+    const patient = await checkinService.addStageToken(patientId, { department, stage });
+
+    // Find the newly added token
+    const newToken = patient.multiStageTokens[patient.multiStageTokens.length - 1];
 
     res.status(201).json({
       success: true,
       message: 'Stage token added successfully',
       data: {
         patientId: patient.patientId,
-        newToken: patient.activeTokens[patient.activeTokens.length - 1]
+        newToken: {
+          token: newToken.token,
+          department: newToken.department,
+          stage: newToken.stage,
+          status: newToken.status,
+          createdAt: newToken.createdAt
+        }
       }
     });
 

@@ -9,6 +9,7 @@ require('dotenv').config();
 const mockEpisRoutes = require('./routes/mockEpis');
 const checkinRoutes = require('./routes/checkin');
 const tokenRoutes = require('./routes/tokenRoutes');
+const staffRoutes = require('./routes/staff');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
 app.use('/api/mock-epis', mockEpisRoutes);
 app.use('/api/checkin', checkinRoutes);
 app.use('/api/tokens', tokenRoutes);
+app.use('/api/staff', staffRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {

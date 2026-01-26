@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 const staffAuthService = require('../services/staffAuthService');
 const Staff = require('../models/staff');
 const logger = require('../utils/logger');
@@ -18,7 +19,7 @@ exports.login = async (req, res) => {
       return res.status(401).json({ success: false, message: 'Invalid credentials' });
     }
 
-    const isMatch = await Staff.comparePassword(password, staff.password);
+    const isMatch = await bcrypt.compare(password, staff.passwordHash);
     if (!isMatch) {
       return res.status(401).json({ success: false, message: 'Invalid credentials' });
     }

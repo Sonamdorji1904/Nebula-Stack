@@ -1,15 +1,21 @@
-// ================================================================================
+﻿// ================================================================================
 // FILE: scripts/seedStaffCore.js
 // ================================================================================
+require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const Role = require('../models/Role');
+const Role = require('../models/role');
 const Department = require('../models/Department');
 const Staff = require('../models/staff');
 
 async function seed() {
   try {
-    await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/hospital-queue');
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/nshqms', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+
+    console.log('Connected to MongoDB');
 
     console.log('Starting seed...');
 
@@ -34,7 +40,7 @@ async function seed() {
       }
     ]);
 
-    console.log('Roles created');
+    console.log('Roles created', roles.length);
 
     // Seed Departments
     const departments = await Department.insertMany([

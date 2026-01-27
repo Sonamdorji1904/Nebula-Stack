@@ -206,6 +206,27 @@ class QueueService {
       throw error;
     }
   }
+
+  /**
+   * Serve a token and advance the queue. Delegates to checkinToken service if implemented.
+   * @param {String} tokenId
+   * @param {String} staffId
+   * @param {Object} options
+   */
+  async serveToken(tokenId, staffId, options = {}) {
+    // Attempt to reuse checkinToken service if it exposes a serve-like method
+    try {
+      const checkinTokenService = require('./checkinToken.service');
+      if (typeof checkinTokenService.serveToken === 'function') {
+        return await checkinTokenService.serveToken(tokenId, staffId, options);
+      }
+    } catch (err) {
+      // ignore missing module and fallthrough to error
+    }
+
+    // If no implementation is found, throw informative error so controller returns 500 with message logged
+    throw new Error('serveToken not implemented in services/queueService or checkinToken.service');
+  }
 }
 
 module.exports = new QueueService();

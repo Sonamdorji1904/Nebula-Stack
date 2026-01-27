@@ -102,3 +102,48 @@ exports.getDepartmentQueueStats = async (req, res) => {
     });
   }
 };
+
+/**
+ * Mark a token as served and advance the queue
+ * @route POST /api/queues/serve
+ * @access Protected - Requires queue:serve permission
+ */
+exports.serveToken = async (req, res) => {
+  try {
+    const { tokenId, staffId, notes } = req.body;
+
+    if (!tokenId || !staffId) {
+      return res.status(400).json({
+        success: false,
+        message: 'tokenId and staffId are required'
+      });
+    }
+
+    const result = await queueService.serveToken(tokenId, staffId, { notes, actedBy: req.user?.staffId });
+
+    logger.info('TOKEN_SERVED', {
+      tokenId,
+      servedBy: req.user?.staffId || staffId,
+      department: result?.department || 'UNKNOWN',
+      newCurrentToken: result?.currentToken || null,
+      timestamp: new Date().toISOString()
+    });
+
+    return res.status(200).json({
+      success: true,
+      data: result
+    });
+  } catch (error) {
+    logger.error('TOKEN_SERVE_FAILED', {
+      tokenId: req.body?.tokenId,
+      staffId: req.body?.staffId,
+      error: error.message,
+      stack: error.stack
+    });
+
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to serve token'
+    });
+  }
+};

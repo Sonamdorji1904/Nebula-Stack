@@ -33,4 +33,8 @@ router.get(
   queueController.getDepartmentQueueStats
 );
 
+// Add serve endpoint to mark a token as served and advance the queue
+// POST /api/queues/serve
+router.post('/serve', queueController.serveToken);
+
 module.exports = router;

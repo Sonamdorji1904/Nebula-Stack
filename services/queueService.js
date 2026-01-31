@@ -227,6 +227,216 @@ class QueueService {
     // If no implementation is found, throw informative error so controller returns 500 with message logged
     throw new Error('serveToken not implemented in services/queueService or checkinToken.service');
   }
+
+  /**
+   * Skip a token (temporarily remove from queue)
+   * @param {string} tokenId - The token to skip
+   * @param {string} department - Department code
+   * @param {string} reason - Reason for skipping (e.g., 'patient-not-present', 'medical-reason')
+   * @param {string} staffId - Staff ID performing the action
+   * @param {string} notes - Additional notes
+   * @returns {Promise<Object>} Updated queue information
+   */
+  async skipToken(tokenId, department, reason, staffId, notes = '') {
+    try {
+      // Validate inputs
+      if (!tokenId || !department || !reason || !staffId) {
+        throw new Error('tokenId, department, reason, and staffId are required');
+      }
+
+      // Find patient with this token
+      const patient = await Patient.findOne({
+        'multiStageTokens.token': tokenId,
+        'multiStageTokens.department': department
+      });
+
+      if (!patient) {
+        throw new Error(`Token ${tokenId} not found for department ${department}`);
+      }
+
+      // Skip the token
+      patient.skipToken(tokenId, department, reason, staffId, notes);
+
+      // Save patient
+      await patient.save();
+
+      logger.info('TOKEN_SKIPPED', {
+        tokenId,
+        department,
+        patientId: patient.patientId,
+        reason,
+        staffId,
+        notes,
+        timestamp: new Date().toISOString()
+      });
+
+      // Return updated queue
+      return await this.getLiveQueue(department);
+    } catch (error) {
+      logger.error('Failed to skip token', {
+        tokenId,
+        department,
+        staffId,
+        error: error.message,
+        stack: error.stack
+      });
+      throw error;
+    }
+  }
+
+  /**
+   * Reschedule a token with adjusted time
+   * @param {string} tokenId - The token to reschedule
+   * @param {string} department - Department code
+   * @param {Date} rescheduledTime - New scheduled time for the token
+   * @param {string} staffId - Staff ID performing the action
+   * @param {string} reason - Reason for rescheduling
+   * @param {string} notes - Additional notes
+   * @returns {Promise<Object>} Updated queue information
+   */
+  async rescheduleToken(tokenId, department, rescheduledTime, staffId, reason, notes = '') {
+    try {
+      // Validate inputs
+      if (!tokenId || !department || !rescheduledTime || !staffId) {
+        throw new Error('tokenId, department, rescheduledTime, and staffId are required');
+      }
+
+      // Validate rescheduled time is in the future
+      if (new Date(rescheduledTime) <= new Date()) {
+        throw new Error('Rescheduled time must be in the future');
+      }
+
+      // Find patient with this token
+      const patient = await Patient.findOne({
+        'multiStageTokens.token': tokenId,
+        'multiStageTokens.department': department
+      });
+
+      if (!patient) {
+        throw new Error(`Token ${tokenId} not found for department ${department}`);
+      }
+
+      // Reschedule the token
+      patient.rescheduleToken(tokenId, department, rescheduledTime, staffId, reason, notes);
+
+      // Save patient
+      await patient.save();
+
+      logger.info('TOKEN_RESCHEDULED', {
+        tokenId,
+        department,
+        patientId: patient.patientId,
+        rescheduledTime,
+        reason,
+        staffId,
+        notes,
+        timestamp: new Date().toISOString()
+      });
+
+      // Return updated queue
+      return await this.getLiveQueue(department);
+    } catch (error) {
+      logger.error('Failed to reschedule token', {
+        tokenId,
+        department,
+        staffId,
+        rescheduledTime: rescheduledTime?.toISOString?.() || rescheduledTime,
+        error: error.message,
+        stack: error.stack
+      });
+      throw error;
+    }
+  }
+
+  /**
+   * Reactivate a skipped or rescheduled token (put it back in queue)
+   * @param {string} tokenId - The token to reactivate
+   * @param {string} department - Department code
+   * @param {string} staffId - Staff ID performing the action
+   * @param {string} notes - Additional notes
+   * @returns {Promise<Object>} Updated queue information
+   */
+  async reactivateToken(tokenId, department, staffId, notes = '') {
+    try {
+      // Validate inputs
+      if (!tokenId || !department || !staffId) {
+        throw new Error('tokenId, department, and staffId are required');
+      }
+
+      // Find patient with this token
+      const patient = await Patient.findOne({
+        'multiStageTokens.token': tokenId,
+        'multiStageTokens.department': department
+      });
+
+      if (!patient) {
+        throw new Error(`Token ${tokenId} not found for department ${department}`);
+      }
+
+      // Reactivate the token
+      patient.reactivateToken(tokenId, department, staffId, notes);
+
+      // Save patient
+      await patient.save();
+
+      logger.info('TOKEN_REACTIVATED', {
+        tokenId,
+        department,
+        patientId: patient.patientId,
+        staffId,
+        notes,
+        timestamp: new Date().toISOString()
+      });
+
+      // Return updated queue
+      return await this.getLiveQueue(department);
+    } catch (error) {
+      logger.error('Failed to reactivate token', {
+        tokenId,
+        department,
+        staffId,
+        error: error.message,
+        stack: error.stack
+      });
+      throw error;
+    }
+  }
+
+  /**
+   * Get token audit history
+   * @param {string} tokenId - The token ID
+   * @param {string} department - Department code
+   * @returns {Promise<Array>} Audit history entries
+   */
+  async getTokenAuditHistory(tokenId, department) {
+    try {
+      const patient = await Patient.findOne({
+        'multiStageTokens.token': tokenId,
+        'multiStageTokens.department': department
+      }).select('multiStageTokens');
+
+      if (!patient) {
+        throw new Error(`Token ${tokenId} not found for department ${department}`);
+      }
+
+      const tokenEntry = patient.multiStageTokens.find(
+        t => t.token === tokenId && t.department === department
+      );
+
+      if (!tokenEntry) {
+        throw new Error(`Token ${tokenId} not found for department ${department}`);
+      }
+
+      return tokenEntry.auditHistory || [];
+    } catch (error) {
+      logger.error('Failed to get token audit history', {
+        tokenId,
+        department,
+        error: error.message
+      });
+      throw error;
+    }
+  }
 }
 
 module.exports = new QueueService();

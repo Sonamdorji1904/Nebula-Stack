@@ -112,6 +112,65 @@ function logOffDutyAccess(staffId, email, resource, ipAddress) {
   });
 }
 
+/**
+ * Log token skip action
+ */
+function logTokenSkipped(tokenId, department, reason, staffId, notes = '') {
+  logger.warn('Token skipped', {
+    event: 'QUEUE_TOKEN_SKIPPED',
+    tokenId,
+    department,
+    reason,
+    staffId,
+    notes,
+    timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Log token reschedule action
+ */
+function logTokenRescheduled(tokenId, department, rescheduledTime, staffId, notes = '') {
+  logger.warn('Token rescheduled', {
+    event: 'QUEUE_TOKEN_RESCHEDULED',
+    tokenId,
+    department,
+    rescheduledTime: rescheduledTime?.toISOString?.() || rescheduledTime,
+    staffId,
+    notes,
+    timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Log token reactivation action
+ */
+function logTokenReactivated(tokenId, department, staffId, notes = '') {
+  logger.info('Token reactivated', {
+    event: 'QUEUE_TOKEN_REACTIVATED',
+    tokenId,
+    department,
+    staffId,
+    notes,
+    timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Log bulk queue operation
+ */
+function logBulkQueueOperation(operation, department, count, staffId, notes = '') {
+  logger.info('Bulk queue operation', {
+    event: 'QUEUE_BULK_OPERATION',
+    operation,
+    department,
+    tokenCount: count,
+    staffId,
+    notes,
+    timestamp: new Date().toISOString()
+  });
+}
+
 module.exports = {
   logLoginSuccess,
   logLoginFailure,
@@ -121,5 +180,9 @@ module.exports = {
   logDepartmentViolation,
   logInvalidToken,
   logInactiveAccountAccess,
-  logOffDutyAccess
+  logOffDutyAccess,
+  logTokenSkipped,
+  logTokenRescheduled,
+  logTokenReactivated,
+  logBulkQueueOperation
 };

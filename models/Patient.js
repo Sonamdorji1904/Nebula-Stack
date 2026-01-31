@@ -2,6 +2,30 @@
 const mongoose = require('mongoose');
 
 /**
+ * Audit history schema for token state changes
+ */
+const auditHistorySchema = new mongoose.Schema(
+  {
+    action: {
+      type: String,
+      enum: ['created', 'called', 'completed', 'skipped', 'rescheduled', 'cancelled'],
+      required: true
+    },
+    reason: String,
+    staffId: String,
+    timestamp: {
+      type: Date,
+      default: Date.now
+    },
+    notes: String,
+    previousStatus: String,
+    newStatus: String,
+    rescheduledTime: Date
+  },
+  { _id: false }
+);
+
+/**
  * Token schema for queue management
  * Each department gets its own token for the queue
  */
@@ -22,8 +46,12 @@ const tokenSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ['pending', 'in-progress', 'completed', 'cancelled'],
+      enum: ['pending', 'in-progress', 'completed', 'cancelled', 'skipped', 'rescheduled'],
       default: 'pending'
+    },
+    issuedAt: {
+      type: Date,
+      default: Date.now
     },
     createdAt: {
       type: Date,
@@ -31,6 +59,24 @@ const tokenSchema = new mongoose.Schema(
     },
     completedAt: {
       type: Date
+    },
+    skippedAt: {
+      type: Date
+    },
+    skippedReason: String,
+    skippedBy: String,
+    rescheduledAt: {
+      type: Date
+    },
+    rescheduledTime: {
+      type: Date,
+      description: 'New scheduled time for rescheduled token'
+    },
+    rescheduledBy: String,
+    rescheduledReason: String,
+    auditHistory: {
+      type: [auditHistorySchema],
+      default: []
     }
   },
   { _id: false }
@@ -227,6 +273,125 @@ patientSchema.methods.callToken = function (token, department) {
   tokenEntry.status = 'in-progress';
   this.currentDepartment = department;
   this.status = 'in-treatment';
+  
+  // Add audit entry
+  tokenEntry.auditHistory = tokenEntry.auditHistory || [];
+  tokenEntry.auditHistory.push({
+    action: 'called',
+    timestamp: new Date(),
+    previousStatus: 'pending',
+    newStatus: 'in-progress'
+  });
+};
+
+/**
+ * Skip token - temporarily remove from queue with reason
+ */
+patientSchema.methods.skipToken = function (token, department, reason, staffId, notes = '') {
+  const tokenEntry = this.multiStageTokens.find(
+    t => t.token === token && t.department === department
+  );
+  
+  if (!tokenEntry) {
+    throw new Error(`Token ${token} not found for department ${department}`);
+  }
+  
+  if (!['pending', 'in-progress'].includes(tokenEntry.status)) {
+    throw new Error(`Token ${token} cannot be skipped. Current status: ${tokenEntry.status}`);
+  }
+  
+  const previousStatus = tokenEntry.status;
+  
+  tokenEntry.status = 'skipped';
+  tokenEntry.skippedAt = new Date();
+  tokenEntry.skippedReason = reason;
+  tokenEntry.skippedBy = staffId;
+  
+  // Add audit entry
+  tokenEntry.auditHistory = tokenEntry.auditHistory || [];
+  tokenEntry.auditHistory.push({
+    action: 'skipped',
+    reason,
+    staffId,
+    timestamp: new Date(),
+    notes,
+    previousStatus,
+    newStatus: 'skipped'
+  });
+};
+
+/**
+ * Reschedule token - adjust scheduled time
+ */
+patientSchema.methods.rescheduleToken = function (token, department, rescheduledTime, staffId, reason, notes = '') {
+  const tokenEntry = this.multiStageTokens.find(
+    t => t.token === token && t.department === department
+  );
+  
+  if (!tokenEntry) {
+    throw new Error(`Token ${token} not found for department ${department}`);
+  }
+  
+  if (!['pending', 'in-progress', 'skipped'].includes(tokenEntry.status)) {
+    throw new Error(`Token ${token} cannot be rescheduled. Current status: ${tokenEntry.status}`);
+  }
+  
+  const previousStatus = tokenEntry.status;
+  
+  tokenEntry.status = 'rescheduled';
+  tokenEntry.rescheduledAt = new Date();
+  tokenEntry.rescheduledTime = rescheduledTime;
+  tokenEntry.rescheduledBy = staffId;
+  tokenEntry.rescheduledReason = reason;
+  
+  // Add audit entry
+  tokenEntry.auditHistory = tokenEntry.auditHistory || [];
+  tokenEntry.auditHistory.push({
+    action: 'rescheduled',
+    reason,
+    staffId,
+    timestamp: new Date(),
+    notes,
+    previousStatus,
+    newStatus: 'rescheduled',
+    rescheduledTime
+  });
+};
+
+/**
+ * Reactivate skipped token (put back in queue)
+ */
+patientSchema.methods.reactivateToken = function (token, department, staffId, notes = '') {
+  const tokenEntry = this.multiStageTokens.find(
+    t => t.token === token && t.department === department
+  );
+  
+  if (!tokenEntry) {
+    throw new Error(`Token ${token} not found for department ${department}`);
+  }
+  
+  if (tokenEntry.status === 'rescheduled') {
+    // If rescheduled, return to pending at scheduled time
+    tokenEntry.status = 'pending';
+  } else if (tokenEntry.status === 'skipped') {
+    // If skipped, return to pending immediately
+    tokenEntry.status = 'pending';
+  } else {
+    throw new Error(`Token ${token} cannot be reactivated. Current status: ${tokenEntry.status}`);
+  }
+  
+  const previousStatus = tokenEntry.status;
+  
+  // Add audit entry
+  tokenEntry.auditHistory = tokenEntry.auditHistory || [];
+  tokenEntry.auditHistory.push({
+    action: 'created', // Back to normal pending state
+    staffId,
+    timestamp: new Date(),
+    notes: `Reactivated. ${notes}`,
+    previousStatus,
+    newStatus: 'pending'
+  });
 };
 
 /**

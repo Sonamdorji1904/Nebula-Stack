@@ -1,5 +1,7 @@
 const checkinService = require('../services/checkinService');
+const tokenDetailService = require('../services/tokenDetailService');
 const logger = require('../utils/logger');
+const securityLogger = require('../utils/securityLogger');
 
 /**
  * Issue new token for a patient in a department
@@ -96,5 +98,78 @@ exports.getDepartmentQueue = async (req, res) => {
   } catch (err) {
     logger.error('Failed to get department queue', { error: err.message });
     res.status(500).json({ success: false, message: 'Failed to get queue', error: err.message });
+  }
+};
+
+/**
+ * Get token detail with history and EWT
+ * @route GET /api/tokens/:tokenId
+ * @access Protected - Requires authentication
+ */
+exports.getTokenDetail = async (req, res) => {
+  try {
+    const { tokenId } = req.params;
+
+    // Validate token ID format
+    if (!tokenId || typeof tokenId !== 'string' || tokenId.trim() === '') {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid token ID format'
+      });
+    }
+
+    // Fetch token detail with RBAC validation
+    const tokenDetail = await tokenDetailService.getTokenDetail(tokenId, req.user);
+
+    // Log the access for audit trail
+    securityLogger.logTokenDetailAccess(
+      tokenId,
+      req.user?.staffId || req.user?.patientId || 'UNKNOWN',
+      req.user?.role?.name || 'UNKNOWN',
+      'view',
+      tokenDetail.department,
+      req.ip
+    );
+
+    return res.status(200).json({
+      success: true,
+      data: tokenDetail
+    });
+  } catch (error) {
+    logger.error('TOKEN_DETAIL_FETCH_FAILED', {
+      tokenId: req.params.tokenId,
+      userId: req.user?.staffId || req.user?.patientId,
+      error: error.message,
+      stack: error.stack
+    });
+
+    // Handle specific error cases
+    if (error.message.includes('not found')) {
+      return res.status(404).json({
+        success: false,
+        message: error.message
+      });
+    }
+
+    if (error.message.includes('Access denied')) {
+      securityLogger.logAccessViolation(
+        req.user?.staffId || req.user?.patientId,
+        req.user?.email || 'UNKNOWN',
+        `/api/tokens/${req.params.tokenId}`,
+        'token:view',
+        req.ip,
+        req.get('user-agent')
+      );
+
+      return res.status(403).json({
+        success: false,
+        message: 'Access denied: Insufficient permissions to view this token'
+      });
+    }
+
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to fetch token detail'
+    });
   }
 };

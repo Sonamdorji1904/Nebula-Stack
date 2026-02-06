@@ -171,6 +171,23 @@ function logBulkQueueOperation(operation, department, count, staffId, notes = ''
   });
 }
 
+/**
+ * Log token detail access
+ * Used for audit trail when staff/patients access token information
+ */
+function logTokenDetailAccess(tokenId, userId, userRole, action = 'view', department = null, ipAddress = null) {
+  logger.info('Token detail accessed', {
+    event: 'AUDIT_TOKEN_DETAIL_ACCESS',
+    tokenId,
+    userId,
+    userRole,
+    action,
+    department,
+    ipAddress,
+    timestamp: new Date().toISOString()
+  });
+}
+
 module.exports = {
   logLoginSuccess,
   logLoginFailure,
@@ -184,5 +201,6 @@ module.exports = {
   logTokenSkipped,
   logTokenRescheduled,
   logTokenReactivated,
-  logBulkQueueOperation
+  logBulkQueueOperation,
+  logTokenDetailAccess
 };

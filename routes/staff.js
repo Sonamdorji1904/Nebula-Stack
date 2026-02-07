@@ -3,6 +3,7 @@ const controller = require('../controllers/staffController');
 const nurseController = require('../controllers/nurseController');
 const { authenticate, requirePermission, requireOnDuty } = require('../middleware/authMiddleware');
 
+// Authentication
 router.post('/login', controller.login);
 router.post('/logout', authenticate, controller.logout);
 router.get('/me', authenticate, controller.getCurrentStaff);

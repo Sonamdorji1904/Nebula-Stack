@@ -133,6 +133,100 @@ class QueueSocketHandler {
       });
     }
   }
+
+  /**
+   * Emit staff status change with EWT recalculation
+   * @param {string} department - Department code
+   * @param {Object} staffStatusData - Staff status change data
+   */
+  emitStaffStatusChange(department, staffStatusData) {
+    try {
+      if (!this.io) {
+        logger.warn('Socket.IO not initialized, skipping staff status update');
+        return;
+      }
+
+      const queueNamespace = this.io.of('/queue');
+
+      queueNamespace.to(department).emit('staff:status-changed', {
+        department,
+        ...staffStatusData,
+        timestamp: new Date()
+      });
+
+      logger.info('Staff status change emitted', {
+        department,
+        staffId: staffStatusData.staffId,
+        newStatus: staffStatusData.newStatus,
+        affectedTokens: staffStatusData.affectedTokens
+      });
+    } catch (error) {
+      logger.error('Failed to emit staff status change', {
+        department,
+        error: error.message
+      });
+    }
+  }
+
+  /**
+   * Emit EWT recalculation event
+   * @param {string} department - Department code
+   * @param {Object} ewtData - EWT calculation data
+   */
+  emitEWTRecalculation(department, ewtData) {
+    try {
+      if (!this.io) return;
+
+      const queueNamespace = this.io.of('/queue');
+
+      queueNamespace.to(department).emit('queue:ewt-updated', {
+        department,
+        ...ewtData,
+        timestamp: new Date()
+      });
+
+      logger.info('EWT recalculation emitted', {
+        department,
+        availableStaff: ewtData.availableStaffCount,
+        pendingTokens: ewtData.pendingTokens
+      });
+    } catch (error) {
+      logger.error('Failed to emit EWT recalculation', {
+        department,
+        error: error.message
+      });
+    }
+  }
+
+  /**
+   * Emit department staff status update
+   * @param {string} department - Department code
+   * @param {Array} staffStatusList - List of staff statuses
+   */
+  emitDepartmentStaffStatus(department, staffStatusList) {
+    try {
+      if (!this.io) return;
+
+      const queueNamespace = this.io.of('/queue');
+
+      queueNamespace.to(department).emit('staff:department-status', {
+        department,
+        staffCount: staffStatusList.length,
+        staff: staffStatusList,
+        timestamp: new Date()
+      });
+
+      logger.info('Department staff status emitted', {
+        department,
+        staffCount: staffStatusList.length
+      });
+    } catch (error) {
+      logger.error('Failed to emit department staff status', {
+        department,
+        error: error.message
+      });
+    }
+  }
 }
 
 module.exports = new QueueSocketHandler();

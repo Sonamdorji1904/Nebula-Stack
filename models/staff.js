@@ -1,5 +1,23 @@
 const mongoose = require('mongoose');
 
+const statusHistorySchema = new mongoose.Schema(
+  {
+    status: {
+      type: String,
+      enum: ['available', 'busy', 'on-break', 'offline'],
+      required: true
+    },
+    changedAt: {
+      type: Date,
+      default: Date.now
+    },
+    changedBy: String,
+    reason: String,
+    durationMinutes: Number
+  },
+  { _id: false, timestamps: false }
+);
+
 const staffSchema = new mongoose.Schema(
   {
     staffId: {
@@ -45,6 +63,17 @@ const staffSchema = new mongoose.Schema(
       type: Boolean,
       default: false
     },
+    currentStatus: {
+      type: String,
+      enum: ['available', 'busy', 'on-break', 'offline'],
+      default: 'offline'
+    },
+    statusUpdatedAt: {
+      type: Date,
+      default: Date.now
+    },
+    previousStatus: String,
+    statusHistory: [statusHistorySchema],
     lastLoginAt: Date,
     createdBy: {
       type: String,
@@ -58,6 +87,8 @@ const staffSchema = new mongoose.Schema(
 staffSchema.index({ staffId: 1 });
 staffSchema.index({ email: 1 });
 staffSchema.index({ role: 1, department: 1 });
+staffSchema.index({ currentStatus: 1, department: 1 });
+staffSchema.index({ statusUpdatedAt: -1 });
 
 // Auto display name
 staffSchema.pre('save', function (next) {

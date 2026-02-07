@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.63% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/11</span>
+                <span class='fraction'>10/14</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.63% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/11</span>
+                <span class='fraction'>10/14</span>
             </div>
         
             
@@ -154,6 +154,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -207,6 +208,24 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const mongoose = require('mongoose');
 &nbsp;
+const statusHistorySchema = new mongoose.Schema(
+  {
+    status: {
+      type: String,
+      enum: ['available', 'busy', 'on-break', 'offline'],
+      required: true
+    },
+    changedAt: {
+      type: Date,
+      default: Date.now
+    },
+    changedBy: String,
+    reason: String,
+    durationMinutes: Number
+  },
+  { _id: false, timestamps: false }
+);
+&nbsp;
 const staffSchema = new mongoose.Schema(
   {
     staffId: {
@@ -252,6 +271,17 @@ const staffSchema = new mongoose.Schema(
       type: Boolean,
       default: false
     },
+    currentStatus: {
+      type: String,
+      enum: ['available', 'busy', 'on-break', 'offline'],
+      default: 'offline'
+    },
+    statusUpdatedAt: {
+      type: Date,
+      default: Date.now
+    },
+    previousStatus: String,
+    statusHistory: [statusHistorySchema],
     lastLoginAt: Date,
     createdBy: {
       type: String,
@@ -265,6 +295,8 @@ const staffSchema = new mongoose.Schema(
 staffSchema.index({ staffId: 1 });
 staffSchema.index({ email: 1 });
 staffSchema.index({ role: 1, department: 1 });
+staffSchema.index({ currentStatus: 1, department: 1 });
+staffSchema.index({ statusUpdatedAt: -1 });
 &nbsp;
 // Auto display name
 staffSchema.pre('save', <span class="fstat-no" title="function not covered" >fu</span>nction (next) {

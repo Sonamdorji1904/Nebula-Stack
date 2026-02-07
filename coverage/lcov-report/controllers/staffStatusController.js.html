@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for utils/queueSocketHandler.js</title>
+    <title>Code coverage report for controllers/staffStatusController.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">utils</a> queueSocketHandler.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">controllers</a> staffStatusController.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.77% </span>
+                <span class="strong">90.24% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/59</span>
+                <span class='fraction'>74/82</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">52.38% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>33/63</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/12</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">7.14% </span>
+                <span class="strong">90.24% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/56</span>
+                <span class='fraction'>74/82</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -294,7 +294,383 @@
 <a name='L229'></a><a href='#L229'>229</a>
 <a name='L230'></a><a href='#L230'>230</a>
 <a name='L231'></a><a href='#L231'>231</a>
-<a name='L232'></a><a href='#L232'>232</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a>
+<a name='L265'></a><a href='#L265'>265</a>
+<a name='L266'></a><a href='#L266'>266</a>
+<a name='L267'></a><a href='#L267'>267</a>
+<a name='L268'></a><a href='#L268'>268</a>
+<a name='L269'></a><a href='#L269'>269</a>
+<a name='L270'></a><a href='#L270'>270</a>
+<a name='L271'></a><a href='#L271'>271</a>
+<a name='L272'></a><a href='#L272'>272</a>
+<a name='L273'></a><a href='#L273'>273</a>
+<a name='L274'></a><a href='#L274'>274</a>
+<a name='L275'></a><a href='#L275'>275</a>
+<a name='L276'></a><a href='#L276'>276</a>
+<a name='L277'></a><a href='#L277'>277</a>
+<a name='L278'></a><a href='#L278'>278</a>
+<a name='L279'></a><a href='#L279'>279</a>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a>
+<a name='L282'></a><a href='#L282'>282</a>
+<a name='L283'></a><a href='#L283'>283</a>
+<a name='L284'></a><a href='#L284'>284</a>
+<a name='L285'></a><a href='#L285'>285</a>
+<a name='L286'></a><a href='#L286'>286</a>
+<a name='L287'></a><a href='#L287'>287</a>
+<a name='L288'></a><a href='#L288'>288</a>
+<a name='L289'></a><a href='#L289'>289</a>
+<a name='L290'></a><a href='#L290'>290</a>
+<a name='L291'></a><a href='#L291'>291</a>
+<a name='L292'></a><a href='#L292'>292</a>
+<a name='L293'></a><a href='#L293'>293</a>
+<a name='L294'></a><a href='#L294'>294</a>
+<a name='L295'></a><a href='#L295'>295</a>
+<a name='L296'></a><a href='#L296'>296</a>
+<a name='L297'></a><a href='#L297'>297</a>
+<a name='L298'></a><a href='#L298'>298</a>
+<a name='L299'></a><a href='#L299'>299</a>
+<a name='L300'></a><a href='#L300'>300</a>
+<a name='L301'></a><a href='#L301'>301</a>
+<a name='L302'></a><a href='#L302'>302</a>
+<a name='L303'></a><a href='#L303'>303</a>
+<a name='L304'></a><a href='#L304'>304</a>
+<a name='L305'></a><a href='#L305'>305</a>
+<a name='L306'></a><a href='#L306'>306</a>
+<a name='L307'></a><a href='#L307'>307</a>
+<a name='L308'></a><a href='#L308'>308</a>
+<a name='L309'></a><a href='#L309'>309</a>
+<a name='L310'></a><a href='#L310'>310</a>
+<a name='L311'></a><a href='#L311'>311</a>
+<a name='L312'></a><a href='#L312'>312</a>
+<a name='L313'></a><a href='#L313'>313</a>
+<a name='L314'></a><a href='#L314'>314</a>
+<a name='L315'></a><a href='#L315'>315</a>
+<a name='L316'></a><a href='#L316'>316</a>
+<a name='L317'></a><a href='#L317'>317</a>
+<a name='L318'></a><a href='#L318'>318</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -303,8 +679,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -313,70 +687,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -387,376 +697,324 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">// utils/queueSocketHandler.js
-/**
- * Real-time queue update handler using Socket.IO
- * This module handles broadcasting queue updates to connected clients
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Staff Status Controller
+ * Handles HTTP requests for staff status management
+ * Enforces authorization, EWT recalculation, and real-time updates
  */
 &nbsp;
+const staffStatusService = require('../services/staffStatusService');
 const queueService = require('../services/queueService');
-const logger = require('../utils/logger');
+const queueSocketHandler = require('../utils/queueSocketHandler');
+const securityLogger = require('../utils/securityLogger');
 &nbsp;
-class QueueSocketHandler {
-  constructor() {
-    this.io = null;
-  }
+/**
+ * POST /api/staff/status
+ * Update staff status (own or admin override)
+ */
+exports.updateStatus = async (req, res) =&gt; {
+  try {
+    const { status } = req.body;
+    const { staffId } = req.params;
+    const requesterId = req.user._id;
+    const requesterRole = req.user.role;
 &nbsp;
-  /**
-   * Initialize socket.io instance
-   * @param {SocketIO.Server} io - Socket.IO server instance
-   */
-<span class="fstat-no" title="function not covered" >  in</span>itialize(io) {
-<span class="cstat-no" title="statement not covered" >    this.io = io;</span>
-<span class="cstat-no" title="statement not covered" >    this.setupNamespace();</span>
-<span class="cstat-no" title="statement not covered" >    logger.info('Queue socket handler initialized');</span>
-  }
+    // Validate status provided
+    if (!status) {
+      return res.status(400).json({
+        success: false,
+        message: 'Status is required'
+      });
+    }
 &nbsp;
-  /**
-   * Setup queue-specific namespace and event handlers
-   */
-<span class="fstat-no" title="function not covered" >  se</span>tupNamespace() {
-    const queueNamespace = <span class="cstat-no" title="statement not covered" >this.io.of('/queue');</span>
+    // Authorization: staff can update own, admins can override
+    const targetStaffId = staffId || <span class="branch-1 cbranch-no" title="branch not covered" >requesterId;</span>
+    const isOwnUpdate = targetStaffId.toString() === requesterId.toString();
+    const isAdmin = requesterRole.permissions?.includes('staff:manage');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    queueNamespace.on('connection', <span class="fstat-no" title="function not covered" >(s</span>ocket) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      logger.info('Client connected to queue namespace', {</span>
-        socketId: socket.id,
-        ip: socket.handshake.address
+    if (!isOwnUpdate &amp;&amp; !isAdmin) {
+      securityLogger.logUnauthorizedStatusUpdateAttempt({
+        requesterId: req.user.staffId,
+        targetStaffId,
+        reason: 'insufficient_permissions'
       });
 &nbsp;
-      // Handle department subscription
-<span class="cstat-no" title="statement not covered" >      socket.on('subscribe:department', <span class="fstat-no" title="function not covered" >(d</span>epartment) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (department &amp;&amp; /^[A-Z]{2,5}$/.test(department)) {</span>
-<span class="cstat-no" title="statement not covered" >          socket.join(department);</span>
-<span class="cstat-no" title="statement not covered" >          logger.info('Client subscribed to department queue', {</span>
-            socketId: socket.id,
-            department
-          });
-&nbsp;
-          // Send initial queue state
-<span class="cstat-no" title="statement not covered" >          this.emitQueueUpdate(department);</span>
-        }
+      return res.status(403).json({
+        success: false,
+        message: 'Unauthorized to update other staff status'
       });
+    }
 &nbsp;
-      // Handle department unsubscription
-<span class="cstat-no" title="statement not covered" >      socket.on('unsubscribe:department', <span class="fstat-no" title="function not covered" >(d</span>epartment) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        socket.leave(department);</span>
-<span class="cstat-no" title="statement not covered" >        logger.info('Client unsubscribed from department queue', {</span>
-          socketId: socket.id,
-          department
+    // Update status
+    const updated = await staffStatusService.updateStatus(targetStaffId, status, {
+      changedBy: isOwnUpdate ? <span class="branch-0 cbranch-no" title="branch not covered" >'self' </span>: `admin:${req.user.staffId}`,
+      reason: req.body.reason || null
+    });
+&nbsp;
+    // Get department for EWT recalculation
+    const staff = await require('../models/staff').findById(targetStaffId).populate('department');
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (staff?.department?.code) {
+      try {
+        // Trigger EWT recalculation
+        await queueService.recalculateEWT(staff.department.code);
+&nbsp;
+        // Get affected tokens
+        const affectedTokens = await queueService.getAffectedTokens(staff.department.code);
+&nbsp;
+        // Emit real-time updates via WebSocket
+        queueSocketHandler.emitStaffStatusChange(staff.department.code, {
+          staffId: staff.staffId,
+          displayName: staff.displayName,
+          previousStatus: updated.previousStatus,
+          newStatus: status,
+          affectedTokens: affectedTokens.length,
+          availableStaffCount: await staffStatusService.getAvailableStaffCount(staff.department._id)
         });
-      });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      socket.on('disconnect', <span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        logger.info('Client disconnected from queue namespace', {</span>
-          socketId: socket.id
+        // Log status change with EWT impact
+        securityLogger.logStaffStatusChange({
+          staffId: staff.staffId,
+          department: staff.department.code,
+          previousStatus: updated.previousStatus,
+          newStatus: status,
+          changedBy: updated.changedBy,
+          affectedTokens: affectedTokens.length
         });
-      });
+      } catch (ewtError) {
+        // Log but don't fail the request if EWT recalculation fails
+        require('../utils/logger').error('EWT recalculation failed after status update', {
+          staffId: staff.staffId,
+          department: staff.department.code,
+          error: ewtError.message
+        });
+      }
+    }
+&nbsp;
+    return res.status(200).json({
+      success: true,
+      message: 'Staff status updated successfully',
+      data: updated
+    });
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    res.status(error.statusCode || 500).json({</span>
+      success: false,
+      message: error.message || 'Failed to update staff status'
     });
   }
+};
 &nbsp;
-  /**
-   * Emit queue update to all subscribed clients
-   * @param {string} department - Department code
-   * @param {Object} options - Additional options
-   */
-<span class="fstat-no" title="function not covered" >  as</span>ync emitQueueUpdate(department, options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      if (!this.io) {</span>
-<span class="cstat-no" title="statement not covered" >        logger.warn('Socket.IO not initialized, skipping queue update');</span>
-<span class="cstat-no" title="statement not covered" >        return;</span>
+/**
+ * GET /api/staff/status/:staffId
+ * Get current status of a staff member
+ */
+exports.getStatus = async (req, res) =&gt; {
+  try {
+    const { staffId } = req.params;
+    const requesterId = req.user._id;
+&nbsp;
+    // Authorization: can view own, admins can view any
+    const isOwnStatus = staffId === requesterId.toString() || staffId === req.user.staffId;
+    const isAdmin = req.user.role.permissions?.includes('staff:manage');
+&nbsp;
+    if (!isOwnStatus &amp;&amp; !isAdmin &amp;&amp; !req.user.role.permissions?.includes('queue:view')) {
+      return res.status(403).json({
+        success: false,
+        message: 'Unauthorized to view this staff status'
+      });
+    }
+&nbsp;
+    const status = await staffStatusService.getStatus(staffId);
+&nbsp;
+    return res.status(200).json({
+      success: true,
+      data: status
+    });
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    res.status(error.statusCode || 500).json({</span>
+      success: false,
+      message: error.message || 'Failed to fetch staff status'
+    });
+  }
+};
+&nbsp;
+/**
+ * GET /api/staff/status-history/:staffId
+ * Get status history for a staff member
+ */
+exports.getStatusHistory = async (req, res) =&gt; {
+  try {
+    const { staffId } = req.params;
+    const limit = Math.min(parseInt(req.query.limit) || <span class="branch-1 cbranch-no" title="branch not covered" >10,</span> 100);
+&nbsp;
+    const history = await staffStatusService.getStatusHistory(staffId, limit);
+&nbsp;
+    return res.status(200).json({
+      success: true,
+      data: {
+        staffId,
+        limit,
+        history
       }
+    });
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    res.status(error.statusCode || 500).json({</span>
+      success: false,
+      message: error.message || 'Failed to fetch status history'
+    });
+  }
+};
 &nbsp;
-      const queue = <span class="cstat-no" title="statement not covered" >await queueService.getLiveQueue(department);</span>
-      const queueNamespace = <span class="cstat-no" title="statement not covered" >this.io.of('/queue');</span>
+/**
+ * GET /api/staff/department/:department/status
+ * Get all staff status for a department
+ */
+exports.getDepartmentStaffStatus = async (req, res) =&gt; {
+  try {
+    const { department } = req.params;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      queueNamespace.to(department).emit('queue:update', {</span>
-        ...queue,
-        ...options
-      });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      logger.debug('Queue update emitted', {</span>
-        department,
-        currentToken: queue.currentToken?.token,
-        pendingCount: queue.nextTokens.length
-      });
-    } catch (error) {
-<span class="cstat-no" title="statement not covered" >      logger.error('Failed to emit queue update', {</span>
-        department,
-        error: error.message
+    // Get department
+    const dept = await require('../models/Department').findOne({ code: department });
+    if (!dept) {
+      return res.status(404).json({
+        success: false,
+        message: 'Department not found'
       });
     }
-  }
 &nbsp;
-  /**
-   * Emit token status change
-   * @param {string} department - Department code
-   * @param {string} token - Token number
-   * @param {string} status - New status
-   */
-<span class="fstat-no" title="function not covered" >  as</span>ync emitTokenStatusChange(department, token, status) {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      if (!this.io) <span class="cstat-no" title="statement not covered" >return;</span></span>
+    const staffStatuses = await staffStatusService.getDepartmentStaffStatus(dept._id);
 &nbsp;
-      const queueNamespace = <span class="cstat-no" title="statement not covered" >this.io.of('/queue');</span>
-      
-<span class="cstat-no" title="statement not covered" >      queueNamespace.to(department).emit('token:status-changed', {</span>
+    return res.status(200).json({
+      success: true,
+      data: {
         department,
-        token,
-        status,
-        timestamp: new Date()
-      });
-&nbsp;
-      // Also emit full queue update
-<span class="cstat-no" title="statement not covered" >      await this.emitQueueUpdate(department);</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      logger.info('Token status change emitted', {</span>
-        department,
-        token,
-        status
-      });
-    } catch (error) {
-<span class="cstat-no" title="statement not covered" >      logger.error('Failed to emit token status change', {</span>
-        department,
-        token,
-        error: error.message
-      });
-    }
-  }
-&nbsp;
-  /**
-   * Emit staff status change with EWT recalculation
-   * @param {string} department - Department code
-   * @param {Object} staffStatusData - Staff status change data
-   */
-<span class="fstat-no" title="function not covered" >  em</span>itStaffStatusChange(department, staffStatusData) {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      if (!this.io) {</span>
-<span class="cstat-no" title="statement not covered" >        logger.warn('Socket.IO not initialized, skipping staff status update');</span>
-<span class="cstat-no" title="statement not covered" >        return;</span>
+        staffCount: staffStatuses.length,
+        staff: staffStatuses
       }
+    });
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    res.status(error.statusCode || 500).json({</span>
+      success: false,
+      message: error.message || 'Failed to fetch department staff status'
+    });
+  }
+};
 &nbsp;
-      const queueNamespace = <span class="cstat-no" title="statement not covered" >this.io.of('/queue');</span>
+/**
+ * POST /api/staff/bulk-status
+ * Bulk update staff status (admin only)
+ */
+exports.bulkUpdateStatus = async (req, res) =&gt; {
+  try {
+    const { staffIds, status } = req.body;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      queueNamespace.to(department).emit('staff:status-changed', {</span>
-        department,
-        ...staffStatusData,
-        timestamp: new Date()
+    // Authorization: admin only
+    if (!req.user.role.permissions?.includes('staff:manage')) {
+      securityLogger.logUnauthorizedStatusUpdateAttempt({
+        requesterId: req.user.staffId,
+        reason: 'bulk_update_non_admin'
       });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      logger.info('Staff status change emitted', {</span>
-        department,
-        staffId: staffStatusData.staffId,
-        newStatus: staffStatusData.newStatus,
-        affectedTokens: staffStatusData.affectedTokens
-      });
-    } catch (error) {
-<span class="cstat-no" title="statement not covered" >      logger.error('Failed to emit staff status change', {</span>
-        department,
-        error: error.message
+      return res.status(403).json({
+        success: false,
+        message: 'Only admins can perform bulk status updates'
       });
     }
-  }
 &nbsp;
-  /**
-   * Emit EWT recalculation event
-   * @param {string} department - Department code
-   * @param {Object} ewtData - EWT calculation data
-   */
-<span class="fstat-no" title="function not covered" >  em</span>itEWTRecalculation(department, ewtData) {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      if (!this.io) <span class="cstat-no" title="statement not covered" >return;</span></span>
-&nbsp;
-      const queueNamespace = <span class="cstat-no" title="statement not covered" >this.io.of('/queue');</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      queueNamespace.to(department).emit('queue:ewt-updated', {</span>
-        department,
-        ...ewtData,
-        timestamp: new Date()
-      });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      logger.info('EWT recalculation emitted', {</span>
-        department,
-        availableStaff: ewtData.availableStaffCount,
-        pendingTokens: ewtData.pendingTokens
-      });
-    } catch (error) {
-<span class="cstat-no" title="statement not covered" >      logger.error('Failed to emit EWT recalculation', {</span>
-        department,
-        error: error.message
+    // Validate input
+    if (!Array.isArray(staffIds) || staffIds.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: 'staffIds must be a non-empty array'
       });
     }
-  }
 &nbsp;
-  /**
-   * Emit department staff status update
-   * @param {string} department - Department code
-   * @param {Array} staffStatusList - List of staff statuses
-   */
-<span class="fstat-no" title="function not covered" >  em</span>itDepartmentStaffStatus(department, staffStatusList) {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      if (!this.io) <span class="cstat-no" title="statement not covered" >return;</span></span>
-&nbsp;
-      const queueNamespace = <span class="cstat-no" title="statement not covered" >this.io.of('/queue');</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      queueNamespace.to(department).emit('staff:department-status', {</span>
-        department,
-        staffCount: staffStatusList.length,
-        staff: staffStatusList,
-        timestamp: new Date()
-      });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      logger.info('Department staff status emitted', {</span>
-        department,
-        staffCount: staffStatusList.length
-      });
-    } catch (error) {
-<span class="cstat-no" title="statement not covered" >      logger.error('Failed to emit department staff status', {</span>
-        department,
-        error: error.message
+    if (staffIds.length &gt; 100) {
+      return res.status(400).json({
+        success: false,
+        message: 'Cannot update more than 100 staff at once'
       });
     }
-  }
-}
 &nbsp;
-module.exports = new QueueSocketHandler();</pre></td></tr></table></pre>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!status) {
+<span class="cstat-no" title="statement not covered" >      return res.status(400).json({</span>
+        success: false,
+        message: 'Status is required'
+      });
+    }
+&nbsp;
+    // Perform bulk update
+    const result = await staffStatusService.bulkUpdateStatus(staffIds, status, {
+      changedBy: `admin:${req.user.staffId}`,
+      reason: req.body.reason || null
+    });
+&nbsp;
+    // Log bulk operation
+    securityLogger.logBulkStaffStatusUpdate({
+      adminId: req.user.staffId,
+      newStatus: status,
+      successCount: result.successful.length,
+      failureCount: result.failed.length,
+      totalAttempted: result.total
+    });
+&nbsp;
+    return res.status(200).json({
+      success: true,
+      message: 'Bulk status update completed',
+      data: {
+        successCount: result.successful.length,
+        failureCount: result.failed.length,
+        successful: result.successful,
+        failed: result.failed
+      }
+    });
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    res.status(error.statusCode || 500).json({</span>
+      success: false,
+      message: error.message || 'Failed to perform bulk status update'
+    });
+  }
+};
+&nbsp;
+/**
+ * GET /api/staff/department/:department/ewt-recalculation
+ * Get EWT recalculation details for a department
+ */
+exports.getEWTDetails = async (req, res) =&gt; {
+  try {
+    const { department } = req.params;
+&nbsp;
+    // Get department
+    const dept = await require('../models/Department').findOne({ code: department });
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!dept) {
+<span class="cstat-no" title="statement not covered" >      return res.status(404).json({</span>
+        success: false,
+        message: 'Department not found'
+      });
+    }
+&nbsp;
+    // Get EWT details
+    const ewtDetails = await queueService.recalculateEWT(department);
+    const affectedTokens = await queueService.getAffectedTokens(department);
+&nbsp;
+    return res.status(200).json({
+      success: true,
+      data: {
+        department,
+        ...ewtDetails,
+        affectedTokens: {
+          count: affectedTokens.length,
+          tokens: affectedTokens
+        }
+      }
+    });
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    res.status(error.statusCode || 500).json({</span>
+      success: false,
+      message: error.message || 'Failed to calculate EWT details'
+    });
+  }
+};
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

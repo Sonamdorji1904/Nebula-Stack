@@ -61,9 +61,10 @@ class QueueService {
   }
 
   /**
-   * Calculate EWT for a department based on historical data
+   * Calculate EWT for a department based on historical data and staff availability
+   * Takes into account how many available staff are working in the department
    * @param {string} departmentCode - Department code
-   * @returns {Promise<number>} Average service time in minutes
+   * @returns {Promise<Object>} Average service time and staff availability info
    */
   async calculateAverageServiceTime(departmentCode) {
     try {
@@ -102,30 +103,51 @@ class QueueService {
 
       if (serviceTimes.length === 0) {
         // Default fallback: 5 minutes
-        return 5;
+        return {
+          averageServiceTime: 5,
+          basedOnSamples: 0
+        };
       }
 
       // Calculate average
       const avgTime = serviceTimes.reduce((a, b) => a + b, 0) / serviceTimes.length;
-      return Math.round(avgTime);
+      return {
+        averageServiceTime: Math.round(avgTime),
+        basedOnSamples: serviceTimes.length
+      };
     } catch (error) {
       logger.error('Failed to calculate average service time', {
         department: departmentCode,
         error: error.message
       });
-      return 5; // Default fallback
+      return {
+        averageServiceTime: 5,
+        basedOnSamples: 0
+      };
     }
   }
 
   /**
    * Get live queue with current token, next tokens, and EWT
+   * Integrates staff availability for accurate EWT calculation
    * @param {string} departmentCode - Department code
    * @returns {Promise<Object>} Queue object with current/next tokens and EWT
    */
   async getLiveQueue(departmentCode) {
     try {
       const activeTokens = await this.getActiveTokensByDepartment(departmentCode);
-      const avgServiceTime = await this.calculateAverageServiceTime(departmentCode);
+      const serviceTimeData = await this.calculateAverageServiceTime(departmentCode);
+      const avgServiceTime = serviceTimeData.averageServiceTime;
+
+      // Get available staff count for this department
+      const department = await Department.findOne({ code: departmentCode });
+      const availableStaffCount = department 
+        ? await (require('./staffStatusService').getAvailableStaffCount(department._id))
+        : 1; // Default to 1 if cannot determine
+
+      // Calculate adjusted EWT based on available staff
+      // Formula: EWT = (pending_tokens * avg_service_time) / available_staff_count
+      const staffAdjustmentFactor = Math.max(availableStaffCount, 1); // At least 1
 
       let currentToken = null;
       const nextTokens = [];
@@ -137,20 +159,22 @@ class QueueService {
           currentToken = { 
             ...token, 
             ewtMinutes: 0,
-            estimatedCompletionTime: null // Already being served
+            estimatedCompletionTime: null,
+            staffServing: availableStaffCount > 0 ? 1 : 0 // One staff serving current token
           };
         } else if (token.status === 'pending') {
           // Calculate cumulative EWT for pending tokens
-          cumulativeEWT += avgServiceTime;
+          // Adjusted by number of available staff
+          cumulativeEWT += (avgServiceTime / staffAdjustmentFactor);
           
           const estimatedCompletionTime = new Date();
           estimatedCompletionTime.setMinutes(
-            estimatedCompletionTime.getMinutes() + cumulativeEWT
+            estimatedCompletionTime.getMinutes() + Math.ceil(cumulativeEWT)
           );
 
           nextTokens.push({ 
             ...token, 
-            ewtMinutes: cumulativeEWT,
+            ewtMinutes: Math.ceil(cumulativeEWT),
             estimatedCompletionTime
           });
         }
@@ -162,6 +186,11 @@ class QueueService {
         nextTokens,
         totalPending: nextTokens.length,
         averageServiceTimeMinutes: avgServiceTime,
+        availableStaffCount,
+        staffAdjustmentFactor,
+        ewtCalculationNote: availableStaffCount > 0 
+          ? `EWT adjusted based on ${availableStaffCount} available staff`
+          : 'WARNING: No staff available - EWT may be inaccurate',
         generatedAt: new Date()
       };
     } catch (error) {
@@ -403,38 +432,65 @@ class QueueService {
   }
 
   /**
-   * Get token audit history
-   * @param {string} tokenId - The token ID
-   * @param {string} department - Department code
-   * @returns {Promise<Array>} Audit history entries
+   * Recalculate EWT for a department after staff status changes
+   * Used when staff becomes available or unavailable
+   * @param {string} departmentCode - Department code
+   * @returns {Promise<Object>} Updated queue with new EWT values
    */
-  async getTokenAuditHistory(tokenId, department) {
+  async recalculateEWT(departmentCode) {
     try {
-      const patient = await Patient.findOne({
-        'multiStageTokens.token': tokenId,
-        'multiStageTokens.department': department
-      }).select('multiStageTokens');
+      const queue = await this.getLiveQueue(departmentCode);
+      
+      logger.info('EWT recalculated for department', {
+        department: departmentCode,
+        availableStaff: queue.availableStaffCount,
+        pendingTokens: queue.totalPending,
+        avgServiceTime: queue.averageServiceTimeMinutes
+      });
 
-      if (!patient) {
-        throw new Error(`Token ${tokenId} not found for department ${department}`);
-      }
-
-      const tokenEntry = patient.multiStageTokens.find(
-        t => t.token === tokenId && t.department === department
-      );
-
-      if (!tokenEntry) {
-        throw new Error(`Token ${tokenId} not found for department ${department}`);
-      }
-
-      return tokenEntry.auditHistory || [];
+      return {
+        department: departmentCode,
+        availableStaffCount: queue.availableStaffCount,
+        pendingTokens: queue.totalPending,
+        averageServiceTimeMinutes: queue.averageServiceTimeMinutes,
+        staffAdjustmentFactor: queue.staffAdjustmentFactor,
+        firstPendingEWT: queue.nextTokens.length > 0 ? queue.nextTokens[0].ewtMinutes : 0,
+        recalculatedAt: new Date()
+      };
     } catch (error) {
-      logger.error('Failed to get token audit history', {
-        tokenId,
-        department,
+      logger.error('Failed to recalculate EWT', {
+        department: departmentCode,
         error: error.message
       });
       throw error;
+    }
+  }
+
+  /**
+   * Get affected tokens when staff availability changes
+   * Returns pending tokens that will be impacted by the change
+   * @param {string} departmentCode - Department code
+   * @returns {Promise<Array>} Array of affected token objects
+   */
+  async getAffectedTokens(departmentCode) {
+    try {
+      const queue = await this.getLiveQueue(departmentCode);
+      
+      return queue.nextTokens.map((token, index) => ({
+        token: token.token,
+        status: token.status,
+        patientId: token.patientId,
+        patientName: token.patientName,
+        position: index + 1,
+        newEwt: token.ewtMinutes,
+        estimatedCompletionTime: token.estimatedCompletionTime
+      }));
+    } catch (error) {
+      logger.error('Failed to get affected tokens', {
+        department: departmentCode,
+        error: error.message
+      });
+      return [];
     }
   }
 }

@@ -188,6 +188,67 @@ function logTokenDetailAccess(tokenId, userId, userRole, action = 'view', depart
   });
 }
 
+/**
+ * Log nurse queue monitoring access
+ * Used for audit trail when nurses access queue monitoring view
+ * Tracks which departments were accessed and what tokens were viewed
+ */
+function logNurseQueueAccess(accessData) {
+  const {
+    staffId,
+    nurseEmail,
+    filtersApplied = 'none',
+    departmentsAccessed = [],
+    totalTokensViewed = 0,
+    ipAddress,
+    userAgent
+  } = accessData;
+
+  logger.info('Nurse queue monitoring accessed', {
+    event: 'NURSE_QUEUE_MONITORING_ACCESS',
+    staffId,
+    email: nurseEmail,
+    departmentsAccessed: departmentsAccessed.join(',') || 'none',
+    totalTokensViewed,
+    filtersApplied: typeof filtersApplied === 'string' ? filtersApplied : JSON.stringify(filtersApplied),
+    ipAddress,
+    userAgent,
+    timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Log nurse token prep status update
+ * Tracks when nurses update token readiness status
+ */
+function logNurseTokenPrepStatusUpdate(prepStatusData) {
+  const {
+    staffId,
+    nurseEmail,
+    tokenId,
+    department,
+    previousStatus,
+    newStatus,
+    patientId,
+    notes = '',
+    ipAddress
+  } = prepStatusData;
+
+  logger.info('Nurse token prep status updated', {
+    event: 'NURSE_TOKEN_PREP_STATUS_UPDATE',
+    staffId,
+    email: nurseEmail,
+    tokenId,
+    department,
+    previousStatus,
+    newStatus,
+    patientId,
+    notes,
+    ipAddress,
+    timestamp: new Date().toISOString()
+  });
+}
+
 module.exports = {
   logLoginSuccess,
   logLoginFailure,
@@ -202,5 +263,7 @@ module.exports = {
   logTokenRescheduled,
   logTokenReactivated,
   logBulkQueueOperation,
-  logTokenDetailAccess
+  logTokenDetailAccess,
+  logNurseQueueAccess,
+  logNurseTokenPrepStatusUpdate
 };

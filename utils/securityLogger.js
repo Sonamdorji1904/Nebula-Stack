@@ -188,6 +188,70 @@ function logTokenDetailAccess(tokenId, userId, userRole, action = 'view', depart
   });
 }
 
+/**
+ * Log staff status change
+ * Records when staff availability status is updated
+ */
+function logStaffStatusChange(data) {
+  logger.info('Staff status changed', {
+    event: 'STAFF_STATUS_CHANGED',
+    staffId: data.staffId,
+    department: data.department,
+    previousStatus: data.previousStatus,
+    newStatus: data.newStatus,
+    changedBy: data.changedBy,
+    affectedTokens: data.affectedTokens || 0,
+    timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Log EWT recalculation
+ * Records when EWT is recalculated due to staff status changes
+ */
+function logEWTRecalculation(data) {
+  logger.info('EWT recalculated', {
+    event: 'EWT_RECALCULATION',
+    department: data.department,
+    availableStaffCount: data.availableStaffCount,
+    pendingTokens: data.pendingTokens,
+    averageServiceTime: data.averageServiceTime,
+    staffAdjustmentFactor: data.staffAdjustmentFactor,
+    firstPendingEwt: data.firstPendingEwt,
+    timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Log bulk staff status update
+ * Records when an admin performs bulk staff status updates
+ */
+function logBulkStaffStatusUpdate(data) {
+  logger.info('Bulk staff status update', {
+    event: 'STAFF_BULK_STATUS_UPDATE',
+    adminId: data.adminId,
+    newStatus: data.newStatus,
+    successCount: data.successCount,
+    failureCount: data.failureCount,
+    totalAttempted: data.totalAttempted,
+    timestamp: new Date().toISOString()
+  });
+}
+
+/**
+ * Log unauthorized status update attempt
+ * Records when someone attempts to update staff status without permission
+ */
+function logUnauthorizedStatusUpdateAttempt(data) {
+  logger.warn('Unauthorized staff status update attempt', {
+    event: 'STAFF_UNAUTHORIZED_STATUS_UPDATE',
+    requesterId: data.requesterId,
+    targetStaffId: data.targetStaffId || null,
+    reason: data.reason,
+    timestamp: new Date().toISOString()
+  });
+}
+
 module.exports = {
   logLoginSuccess,
   logLoginFailure,
@@ -202,5 +266,9 @@ module.exports = {
   logTokenRescheduled,
   logTokenReactivated,
   logBulkQueueOperation,
-  logTokenDetailAccess
+  logTokenDetailAccess,
+  logStaffStatusChange,
+  logEWTRecalculation,
+  logBulkStaffStatusUpdate,
+  logUnauthorizedStatusUpdateAttempt
 };

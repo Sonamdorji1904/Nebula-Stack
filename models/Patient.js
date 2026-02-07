@@ -49,6 +49,12 @@ const tokenSchema = new mongoose.Schema(
       enum: ['pending', 'in-progress', 'completed', 'cancelled', 'skipped', 'rescheduled'],
       default: 'pending'
     },
+    prepStatus: {
+      type: String,
+      enum: ['waiting', 'in-prep', 'ready', 'completed'],
+      default: 'waiting',
+      description: 'Token readiness status for nursing workflow'
+    },
     issuedAt: {
       type: Date,
       default: Date.now
@@ -74,6 +80,14 @@ const tokenSchema = new mongoose.Schema(
     },
     rescheduledBy: String,
     rescheduledReason: String,
+    prepStartedAt: {
+      type: Date,
+      description: 'Timestamp when prep status transitioned to in-prep'
+    },
+    prepReadyAt: {
+      type: Date,
+      description: 'Timestamp when prep status transitioned to ready'
+    },
     auditHistory: {
       type: [auditHistorySchema],
       default: []
@@ -422,6 +436,48 @@ patientSchema.methods.completeToken = function (token, department) {
   }
   
   // activeTokens will auto-sync on save
+};
+
+/**
+ * Update prep status - nurse workflow status tracking
+ */
+patientSchema.methods.updatePrepStatus = function (token, department, newStatus, staffId, notes = '') {
+  const tokenEntry = this.multiStageTokens.find(
+    t => t.token === token && t.department === department
+  );
+  
+  if (!tokenEntry) {
+    throw new Error(`Token ${token} not found for department ${department}`);
+  }
+  
+  const validStatuses = ['waiting', 'in-prep', 'ready', 'completed'];
+  if (!validStatuses.includes(newStatus)) {
+    throw new Error(`Invalid prep status: ${newStatus}`);
+  }
+  
+  const previousPrepStatus = tokenEntry.prepStatus;
+  
+  // Track timing for prep transitions
+  if (newStatus === 'in-prep' && previousPrepStatus !== 'in-prep') {
+    tokenEntry.prepStartedAt = new Date();
+  }
+  
+  if (newStatus === 'ready' && previousPrepStatus !== 'ready') {
+    tokenEntry.prepReadyAt = new Date();
+  }
+  
+  tokenEntry.prepStatus = newStatus;
+  
+  // Add audit entry
+  tokenEntry.auditHistory = tokenEntry.auditHistory || [];
+  tokenEntry.auditHistory.push({
+    action: 'prep-status-updated',
+    staffId,
+    timestamp: new Date(),
+    notes: `Prep status changed from ${previousPrepStatus} to ${newStatus}. ${notes}`,
+    previousStatus: previousPrepStatus,
+    newStatus: newStatus
+  });
 };
 
 /**

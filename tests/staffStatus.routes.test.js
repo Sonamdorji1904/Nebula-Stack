@@ -40,6 +40,11 @@ describe('Staff Status Controller', () => {
     mockStaffFindById.mockClear();
     mockDepartmentFindOne.mockClear();
 
+    // Setup securityLogger mocks
+    securityLogger.logUnauthorizedStatusUpdateAttempt = jest.fn();
+    securityLogger.logStaffStatusChange = jest.fn();
+    securityLogger.logBulkStaffStatusUpdate = jest.fn();
+
     mockReq = {
       user: {
         _id: 'user123',

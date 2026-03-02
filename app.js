@@ -8,6 +8,10 @@ const logger = require('./utils/logger');
 const queueSocketHandler = require('./utils/queueSocketHandler');
 require('dotenv').config();
 
+// Import EWT services
+const ewtRecalculationService = require('./services/ewtRecalculationService');
+const historicalDataCollectionService = require('./services/historicalDataCollectionService');
+
 // Import routes
 const mockEpisRoutes = require('./routes/mockEpis');
 const checkinRoutes = require('./routes/checkin');
@@ -86,7 +90,49 @@ const connectDB = async () => {
     require('./models/Department');
     require('./models/staff');
     require('./models/FollowupServiceMapping');
+    require('./models/HistoricalServiceTime');
     logger.info('Models registered successfully');
+
+    // Initialize EWT recalculation service with queue socket handler listener
+    ewtRecalculationService.registerListener(async (event) => {
+      try {
+        if (queueSocketHandler.emitEWTRecalculation) {
+          await queueSocketHandler.emitEWTRecalculation(
+            event.results.department,
+            event.results
+          );
+        }
+      } catch (err) {
+        logger.error('Failed to emit EWT recalculation event', {
+          error: err.message
+        });
+      }
+    });
+
+    // Start EWT batch processing
+    ewtRecalculationService.startBatchProcessing(30); // Process batches every 30 seconds
+    logger.info('EWT batch processing started');
+
+    // Schedule historical data collection for all departments
+    try {
+      const Department = require('./models/Department');
+      const departments = await Department.find({ isActive: true }).select('code');
+      const departmentCodes = departments.map(d => d.code);
+      
+      if (departmentCodes.length > 0) {
+        historicalDataCollectionService.schedulePeriodicCollection(
+          departmentCodes,
+          60 // Collect every 60 minutes
+        );
+        logger.info('Historical data collection scheduled', {
+          departments: departmentCodes
+        });
+      }
+    } catch (err) {
+      logger.warn('Failed to schedule historical data collection', {
+        error: err.message
+      });
+    }
 
   } catch (err) {
     logger.error('MongoDB connection error', { error: err.message });

@@ -2,6 +2,9 @@
 const Patient = require('../models/Patient');
 const Department = require('../models/Department');
 const logger = require('../utils/logger');
+const ewtCalculationEngine = require('./ewtCalculationEngineService');
+const ewtRecalculationService = require('./ewtRecalculationService');
+const ewtMetricsCollector = require('../utils/ewtMetricsCollector');
 
 class QueueService {
   /**
@@ -129,7 +132,7 @@ class QueueService {
 
   /**
    * Get live queue with current token, next tokens, and EWT
-   * Integrates staff availability for accurate EWT calculation
+   * Uses the new EWT calculation engine for enhanced accuracy
    * @param {string} departmentCode - Department code
    * @returns {Promise<Object>} Queue object with current/next tokens and EWT
    */
@@ -143,40 +146,74 @@ class QueueService {
       const department = await Department.findOne({ code: departmentCode });
       const availableStaffCount = department 
         ? await (require('./staffStatusService').getAvailableStaffCount(department._id))
-        : 1; // Default to 1 if cannot determine
+        : 1;
 
-      // Calculate adjusted EWT based on available staff
-      // Formula: EWT = (pending_tokens * avg_service_time) / available_staff_count
-      const staffAdjustmentFactor = Math.max(availableStaffCount, 1); // At least 1
+      const staffAdjustmentFactor = Math.max(availableStaffCount, 1);
 
       let currentToken = null;
       const nextTokens = [];
-      let cumulativeEWT = 0;
 
-      for (const token of activeTokens) {
+      for (let i = 0; i < activeTokens.length; i++) {
+        const token = activeTokens[i];
+
         if (token.status === 'in-progress' && !currentToken) {
-          // First in-progress token is the current one
           currentToken = { 
             ...token, 
             ewtMinutes: 0,
             estimatedCompletionTime: null,
-            staffServing: availableStaffCount > 0 ? 1 : 0 // One staff serving current token
+            staffServing: availableStaffCount > 0 ? 1 : 0
           };
         } else if (token.status === 'pending') {
-          // Calculate cumulative EWT for pending tokens
-          // Adjusted by number of available staff
-          cumulativeEWT += (avgServiceTime / staffAdjustmentFactor);
-          
-          const estimatedCompletionTime = new Date();
-          estimatedCompletionTime.setMinutes(
-            estimatedCompletionTime.getMinutes() + Math.ceil(cumulativeEWT)
-          );
+          try {
+            // Use new EWT calculation engine
+            const ewtResult = await ewtCalculationEngine.calculateEWT(
+              token.token,
+              departmentCode,
+              { useCache: true }
+            );
 
-          nextTokens.push({ 
-            ...token, 
-            ewtMinutes: Math.ceil(cumulativeEWT),
-            estimatedCompletionTime
-          });
+            const estimatedCompletionTime = new Date();
+            estimatedCompletionTime.setMinutes(
+              estimatedCompletionTime.getMinutes() + ewtResult.ewt
+            );
+
+            nextTokens.push({ 
+              ...token, 
+              ewtMinutes: ewtResult.ewt,
+              estimatedCompletionTime,
+              confidence: ewtResult.confidence,
+              position: ewtResult.tokenPosition
+            });
+
+            // Record metrics
+            ewtMetricsCollector.recordEWTCalculation(
+              token.token,
+              departmentCode,
+              ewtResult.ewt,
+              { source: 'getLiveQueue', position: ewtResult.tokenPosition }
+            );
+          } catch (tokenError) {
+            logger.error('Failed to calculate EWT for token in queue', {
+              token: token.token,
+              error: tokenError.message
+            });
+
+            // Fallback: use simple calculation
+            const fallbackEWT = (i - 1) * avgServiceTime / staffAdjustmentFactor;
+            const estimatedCompletionTime = new Date();
+            estimatedCompletionTime.setMinutes(
+              estimatedCompletionTime.getMinutes() + Math.ceil(fallbackEWT)
+            );
+
+            nextTokens.push({ 
+              ...token, 
+              ewtMinutes: Math.ceil(fallbackEWT),
+              estimatedCompletionTime,
+              confidence: 0.3,
+              position: i + 1,
+              usingFallback: true
+            });
+          }
         }
       }
 
@@ -189,9 +226,10 @@ class QueueService {
         availableStaffCount,
         staffAdjustmentFactor,
         ewtCalculationNote: availableStaffCount > 0 
-          ? `EWT adjusted based on ${availableStaffCount} available staff`
+          ? `EWT calculated using advanced algorithm with ${availableStaffCount} available staff`
           : 'WARNING: No staff available - EWT may be inaccurate',
-        generatedAt: new Date()
+        generatedAt: new Date(),
+        calculationEngine: 'advanced_ewt_calculator'
       };
     } catch (error) {
       logger.error('Failed to get live queue', {
@@ -433,28 +471,30 @@ class QueueService {
 
   /**
    * Recalculate EWT for a department after staff status changes
-   * Used when staff becomes available or unavailable
+   * Uses the new EWT recalculation service with proper event handling
    * @param {string} departmentCode - Department code
-   * @returns {Promise<Object>} Updated queue with new EWT values
+   * @returns {Promise<Object>} Recalculation results
    */
   async recalculateEWT(departmentCode) {
     try {
-      const queue = await this.getLiveQueue(departmentCode);
+      const results = await ewtRecalculationService.recalculateDepartmentEWT(
+        departmentCode,
+        { trigger: 'manual_recalculation' }
+      );
       
       logger.info('EWT recalculated for department', {
         department: departmentCode,
-        availableStaff: queue.availableStaffCount,
-        pendingTokens: queue.totalPending,
-        avgServiceTime: queue.averageServiceTimeMinutes
+        recalculated: results.recalculated.length,
+        errors: results.errors.length
       });
 
       return {
         department: departmentCode,
-        availableStaffCount: queue.availableStaffCount,
-        pendingTokens: queue.totalPending,
-        averageServiceTimeMinutes: queue.averageServiceTimeMinutes,
-        staffAdjustmentFactor: queue.staffAdjustmentFactor,
-        firstPendingEWT: queue.nextTokens.length > 0 ? queue.nextTokens[0].ewtMinutes : 0,
+        recalculated: results.recalculated.length,
+        errors: results.errors.length,
+        firstPendingEWT: results.recalculated.length > 0 
+          ? results.recalculated[0].newEWT 
+          : 0,
         recalculatedAt: new Date()
       };
     } catch (error) {

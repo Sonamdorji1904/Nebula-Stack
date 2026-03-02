@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for services/nurseQueueService.js</title>
+    <title>Code coverage report for services/followupTokenGenerationService.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">services</a> nurseQueueService.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">services</a> followupTokenGenerationService.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50.86% </span>
+                <span class="strong">93.1% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>59/116</span>
+                <span class='fraction'>108/116</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.5% </span>
+                <span class="strong">73.58% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>23/63</span>
+                <span class='fraction'>39/53</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.17% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/17</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.78% </span>
+                <span class="strong">93.04% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>58/112</span>
+                <span class='fraction'>107/115</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -504,11 +504,91 @@
 <a name='L439'></a><a href='#L439'>439</a>
 <a name='L440'></a><a href='#L440'>440</a>
 <a name='L441'></a><a href='#L441'>441</a>
-<a name='L442'></a><a href='#L442'>442</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<a name='L442'></a><a href='#L442'>442</a>
+<a name='L443'></a><a href='#L443'>443</a>
+<a name='L444'></a><a href='#L444'>444</a>
+<a name='L445'></a><a href='#L445'>445</a>
+<a name='L446'></a><a href='#L446'>446</a>
+<a name='L447'></a><a href='#L447'>447</a>
+<a name='L448'></a><a href='#L448'>448</a>
+<a name='L449'></a><a href='#L449'>449</a>
+<a name='L450'></a><a href='#L450'>450</a>
+<a name='L451'></a><a href='#L451'>451</a>
+<a name='L452'></a><a href='#L452'>452</a>
+<a name='L453'></a><a href='#L453'>453</a>
+<a name='L454'></a><a href='#L454'>454</a>
+<a name='L455'></a><a href='#L455'>455</a>
+<a name='L456'></a><a href='#L456'>456</a>
+<a name='L457'></a><a href='#L457'>457</a>
+<a name='L458'></a><a href='#L458'>458</a>
+<a name='L459'></a><a href='#L459'>459</a>
+<a name='L460'></a><a href='#L460'>460</a>
+<a name='L461'></a><a href='#L461'>461</a>
+<a name='L462'></a><a href='#L462'>462</a>
+<a name='L463'></a><a href='#L463'>463</a>
+<a name='L464'></a><a href='#L464'>464</a>
+<a name='L465'></a><a href='#L465'>465</a>
+<a name='L466'></a><a href='#L466'>466</a>
+<a name='L467'></a><a href='#L467'>467</a>
+<a name='L468'></a><a href='#L468'>468</a>
+<a name='L469'></a><a href='#L469'>469</a>
+<a name='L470'></a><a href='#L470'>470</a>
+<a name='L471'></a><a href='#L471'>471</a>
+<a name='L472'></a><a href='#L472'>472</a>
+<a name='L473'></a><a href='#L473'>473</a>
+<a name='L474'></a><a href='#L474'>474</a>
+<a name='L475'></a><a href='#L475'>475</a>
+<a name='L476'></a><a href='#L476'>476</a>
+<a name='L477'></a><a href='#L477'>477</a>
+<a name='L478'></a><a href='#L478'>478</a>
+<a name='L479'></a><a href='#L479'>479</a>
+<a name='L480'></a><a href='#L480'>480</a>
+<a name='L481'></a><a href='#L481'>481</a>
+<a name='L482'></a><a href='#L482'>482</a>
+<a name='L483'></a><a href='#L483'>483</a>
+<a name='L484'></a><a href='#L484'>484</a>
+<a name='L485'></a><a href='#L485'>485</a>
+<a name='L486'></a><a href='#L486'>486</a>
+<a name='L487'></a><a href='#L487'>487</a>
+<a name='L488'></a><a href='#L488'>488</a>
+<a name='L489'></a><a href='#L489'>489</a>
+<a name='L490'></a><a href='#L490'>490</a>
+<a name='L491'></a><a href='#L491'>491</a>
+<a name='L492'></a><a href='#L492'>492</a>
+<a name='L493'></a><a href='#L493'>493</a>
+<a name='L494'></a><a href='#L494'>494</a>
+<a name='L495'></a><a href='#L495'>495</a>
+<a name='L496'></a><a href='#L496'>496</a>
+<a name='L497'></a><a href='#L497'>497</a>
+<a name='L498'></a><a href='#L498'>498</a>
+<a name='L499'></a><a href='#L499'>499</a>
+<a name='L500'></a><a href='#L500'>500</a>
+<a name='L501'></a><a href='#L501'>501</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -520,10 +600,393 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -532,860 +995,574 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// services/nurseQueueService.js
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// services/followupTokenGenerationService.js
 const Patient = require('../models/Patient');
-const Staff = require('../models/staff');
 const Department = require('../models/Department');
+const followupServiceMappingService = require('./followupServiceMappingService');
+const followupEventLogger = require('../utils/followupEventLogger');
 const logger = require('../utils/logger');
+const { getNextTokenCounter } = require('./tokenCounter.service');
+const { generateToken } = require('../utils/tokenGenerator');
+const queueService = require('./queueService');
+const staffStatusService = require('./staffStatusService');
 &nbsp;
-class NurseQueueService {
+/**
+ * Followup Token Generation Service
+ * Core DWE (Dynamic Workflow Engine) logic for creating follow-up tokens
+ * Handles:
+ * - Token generation with atomic counters
+ * - Parent-child linking
+ * - EWT calculation with priority consideration
+ * - Queue assignment
+ * - Transactional integrity
+ */
+class FollowupTokenGenerationService {
   /**
-   * Get nurse's department assignments
-   * @param {string} staffId - Staff ObjectId
-   * @returns {Promise&lt;Array&gt;} Array of department codes assigned to nurse
+   * Generate multiple follow-up tokens atomically
+   * Main DWE entry point from post-consultation trigger
+   *
+   * @param {string} parentTokenId - Token from completed consultation
+   * @param {Array} requiredServices - Array of required followup services
+   * @param {Object} patientData - Patient information
+   * @param {Object} options - Configuration options
+   * @returns {Promise&lt;Object&gt;} { successTokens: [], failedServices: [] }
+   * @throws {Error} If transaction fails
    */
-  async getNurseDepartments(staffId) {
+  async generateFollowupTokens(parentTokenId, requiredServices, patientData, options = {}) {
+    const startTime = Date.now();
+    const correlationId = followupEventLogger.generateCorrelationId();
+&nbsp;
     try {
-      const nurse = await Staff.findById(staffId)
-        .populate('department', 'code name')
-        .lean();
-      
-      if (!nurse) {
-        throw new Error(`Nurse with ID ${staffId} not found`);
+      logger.info(`Starting follow-up token generation for parent: ${parentTokenId}`, {
+        service_count: requiredServices.length,
+        correlation_id: correlationId
+      });
+&nbsp;
+      followupEventLogger.logDWEProcessingStart({
+        parent_token_id: parentTokenId,
+        patient_id: patientData.patientId,
+        services: requiredServices,
+        correlation_id: correlationId
+      });
+&nbsp;
+      // Validate parent token exists
+      const patient = await Patient.findOne({ patientId: patientData.patientId });
+      if (!patient) {
+        throw new Error(`Patient not found: ${patientData.patientId}`);
       }
 &nbsp;
-      // For now, based on the current schema, a nurse has one assigned department
-      // This can be extended to support multiple departments in the future
-      const departments = nurse.department ? [nurse.department.code] : [];
-      
-      return departments;
-    } catch (error) {
-      logger.error('Failed to fetch nurse departments', {
-        staffId,
-        error: error.message,
-        stack: error.stack
+      const parentToken = patient.multiStageTokens.find(t =&gt; t.token === parentTokenId);
+      if (!parentToken) {
+        throw new Error(`Parent token not found: ${parentTokenId}`);
+      }
+&nbsp;
+      const successTokens = [];
+      const failedServices = [];
+&nbsp;
+      // Process each required service
+      for (const service of requiredServices) {
+        try {
+          const generatedToken = await this.createFollowupToken(
+            parentTokenId,
+            service,
+            patientData,
+            { correlationId, ...options }
+          );
+&nbsp;
+          successTokens.push(generatedToken);
+&nbsp;
+          // Re-fetch patient to get latest state
+          const updatedPatient = await Patient.findOne({ patientId: patientData.patientId });
+          patient.multiStageTokens = updatedPatient.multiStageTokens;
+        } catch (error) {
+          logger.error(`Failed to create followup token for service: ${service.service_type}`, {
+            error: error.message,
+            parent_token: parentTokenId,
+            patient_id: patientData.patientId,
+            correlation_id: correlationId
+          });
+&nbsp;
+          failedServices.push({
+            service_type: service.service_type,
+            error: error.message,
+            timestamp: new Date().toISOString()
+          });
+&nbsp;
+          followupEventLogger.logFollowupTokenCreationFailed(
+            {
+              parent_token_id: parentTokenId,
+              patient_id: patientData.patientId,
+              service_type: service.service_type,
+              correlation_id: correlationId
+            },
+            error
+          );
+        }
+      }
+&nbsp;
+      // Log completion
+      const processingTime = Date.now() - startTime;
+      followupEventLogger.logDWEProcessingEnd({
+        parent_token_id: parentTokenId,
+        patient_id: patientData.patientId,
+        created_tokens: successTokens.map(t =&gt; t.token),
+        duration_ms: processingTime,
+        status: failedServices.length === 0 ? 'success' : 'partial_success',
+        correlation_id: correlationId
       });
+&nbsp;
+      logger.info(`Follow-up token generation completed for parent: ${parentTokenId}`, {
+        created: successTokens.length,
+        failed: failedServices.length,
+        processing_time_ms: processingTime,
+        correlation_id: correlationId
+      });
+&nbsp;
+      return {
+        successTokens,
+        failedServices,
+        processingTime,
+        correlationId,
+        status: failedServices.length === 0 ? 'success' : 'partial_success'
+      };
+    } catch (error) {
+      logger.error('Failed to generate followup tokens', {
+        parent_token: parentTokenId,
+        patient_id: patientData.patientId,
+        error: error.message,
+        stack: error.stack,
+        correlation_id: correlationId
+      });
+&nbsp;
+      followupEventLogger.logDWEError(
+        {
+          parent_token_id: parentTokenId,
+          patient_id: patientData.patientId,
+          correlation_id: correlationId
+        },
+        error
+      );
+&nbsp;
       throw error;
     }
   }
 &nbsp;
   /**
-   * Get queue items visible to a nurse with prep status
-   * @param {string} staffId - Staff ObjectId
-   * @param {Object} filters - Optional filters { status, prepStatus }
-   * @returns {Promise&lt;Object&gt;} Queue data with tokens and prep status
+   * Create a single follow-up token
+   * Handles service mapping, token generation, EWT calculation, and linking
+   *
+   * @param {string} parentTokenId - Parent token ID
+   * @param {Object} service - Service configuration
+   * @param {Object} patientData - Patient information
+   * @param {Object} options - Additional options (correlationId, etc.)
+   * @returns {Promise&lt;Object&gt;} Generated token information
    */
-  async getNurseQueueMonitoring(staffId, filters = {}) {
+  async createFollowupToken(parentTokenId, service, patientData, options = {}) {
+    const correlationId = options.correlationId || followupEventLogger.generateCorrelationId();
+&nbsp;
     try {
-      // Get nurse's accessible departments
-      const departments = await this.getNurseDepartments(staffId);
+      // Step 1: Map service type to department
+      const mapping = await followupServiceMappingService.getMappingByServiceType(
+        service.service_type
+      );
 &nbsp;
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (departments.length === 0) {
-<span class="cstat-no" title="statement not covered" >        return {</span>
-          success: true,
-          nurse: {
-            staffId
-          },
-          departments: [],
-          queues: [],
-          summary: {
-            totalTokens: 0,
-            waitingCount: 0,
-            inPrepCount: 0,
-            readyCount: 0
-          }
-        };
+      followupEventLogger.logServiceMappingLookup(service.service_type, !!mapping);
+&nbsp;
+      const departmentCode = mapping.target_department;
+&nbsp;
+      // Step 2: Validate department exists
+      const department = await Department.findOne({ code: departmentCode });
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (!department) {
+<span class="cstat-no" title="statement not covered" >        throw new Error(`Target department not found: ${departmentCode}`);</span>
       }
 &nbsp;
-      // Fetch queue data for each assigned department
-      const queues = [];
-      const summary = {
-        totalTokens: 0,
-        waitingCount: 0,
-        inPrepCount: 0,
-        readyCount: 0
-      };
+      // Step 3: Generate unique token
+      const counter = await getNextTokenCounter(departmentCode);
+      const tokenStr = generateToken(departmentCode, counter);
 &nbsp;
-      for (const departmentCode of departments) {
-        const queueData = await this.getDepartmentQueueForNurse(
-          departmentCode,
-          filters
-        );
-        
-        queues.push(queueData);
-        
-        // Update summary
-        summary.totalTokens += queueData.tokens.length;
-<span class="cstat-no" title="statement not covered" >        summary.waitingCount += queueData.tokens.filter(<span class="fstat-no" title="function not covered" >t </span>=&gt; <span class="cstat-no" title="statement not covered" >t.prepStatus === 'waiting')</span>.length;</span>
-<span class="cstat-no" title="statement not covered" >        summary.inPrepCount += queueData.tokens.filter(<span class="fstat-no" title="function not covered" >t </span>=&gt; <span class="cstat-no" title="statement not covered" >t.prepStatus === 'in-prep')</span>.length;</span>
-<span class="cstat-no" title="statement not covered" >        summary.readyCount += queueData.tokens.filter(<span class="fstat-no" title="function not covered" >t </span>=&gt; <span class="cstat-no" title="statement not covered" >t.prepStatus === 'ready')</span>.length;</span>
-      }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      return {</span>
-        success: true,
-        nurse: {
-          staffId,
-          timestamp: new Date().toISOString()
-        },
-        departments: departments,
-        queues,
-        summary
-      };
-    } catch (error) {
-      logger.error('Failed to fetch nurse queue monitoring', {
-        staffId,
-        filters,
-        error: error.message,
-        stack: error.stack
-      });
-      throw error;
-    }
-  }
-&nbsp;
-  /**
-   * Get queue items for a specific department visible to nurse
-   * @param {string} departmentCode - Department code (e.g., 'REG', 'OPD')
-   * @param {Object} filters - Optional filters { status, prepStatus }
-   * @returns {Promise&lt;Object&gt;} Department queue with tokens and detailed prep status
-   */
-<span class="fstat-no" title="function not covered" >  as</span>ync getDepartmentQueueForNurse(departmentCode, filters = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      // Verify department exists
-      const department = <span class="cstat-no" title="statement not covered" >await Department.findOne({ code: departmentCode });</span>
-<span class="cstat-no" title="statement not covered" >      if (!department) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(`Department ${departmentCode} not found`);</span>
-      }
-&nbsp;
-      // Get all patients with active tokens in this department
-      const patients = <span class="cstat-no" title="statement not covered" >await Patient.find({</span>
-        'multiStageTokens.department': departmentCode,
-        'multiStageTokens.status': { $in: ['pending', 'in-progress'] }
-      })
-        .select('patientId firstName lastName multiStageTokens')
-        .lean();
-&nbsp;
-      const tokens = <span class="cstat-no" title="statement not covered" >[];</span>
-      const currentToken = <span class="cstat-no" title="statement not covered" >null;</span>
-      const nextTokens = <span class="cstat-no" title="statement not covered" >[];</span>
-&nbsp;
-      // Extract and format tokens with prep status
-<span class="cstat-no" title="statement not covered" >      for (const patient of patients) {</span>
-<span class="cstat-no" title="statement not covered" >        for (const token of patient.multiStageTokens) {</span>
-<span class="cstat-no" title="statement not covered" >          if (</span>
-            token.department === departmentCode &amp;&amp;
-            ['pending', 'in-progress'].includes(token.status)
-          ) {
-            // Apply status filter if specified
-<span class="cstat-no" title="statement not covered" >            if (filters.status &amp;&amp; token.status !== filters.status) {</span>
-<span class="cstat-no" title="statement not covered" >              continue;</span>
-            }
-&nbsp;
-            // Apply prep status filter if specified
-<span class="cstat-no" title="statement not covered" >            if (filters.prepStatus &amp;&amp; token.prepStatus !== filters.prepStatus) {</span>
-<span class="cstat-no" title="statement not covered" >              continue;</span>
-            }
-&nbsp;
-            const tokenData = <span class="cstat-no" title="statement not covered" >{</span>
-              token: token.token,
-              status: token.status,
-              prepStatus: token.prepStatus,
-              patientId: patient.patientId,
-              patientName: `${patient.firstName} ${patient.lastName}`,
-              createdAt: token.createdAt,
-              issuedAt: token.issuedAt,
-              prepStartedAt: token.prepStartedAt,
-              prepReadyAt: token.prepReadyAt,
-              stage: token.stage,
-              auditHistoryCount: token.auditHistory ? token.auditHistory.length : 0
-            };
-&nbsp;
-<span class="cstat-no" title="statement not covered" >            tokens.push(tokenData);</span>
-          }
-        }
-      }
-&nbsp;
-      // Sort by creation time (FIFO) - pending tokens first, then in-progress
-<span class="cstat-no" title="statement not covered" >      tokens.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        if (a.status === b.status) {</span>
-<span class="cstat-no" title="statement not covered" >          return new Date(a.createdAt) - new Date(b.createdAt);</span>
-        }
-<span class="cstat-no" title="statement not covered" >        return a.status === 'in-progress' ? -1 : 1;</span>
+      logger.debug(`Generated token: ${tokenStr}`, {
+        parent_token: parentTokenId,
+        department: departmentCode,
+        correlation_id: correlationId
       });
 &nbsp;
-      // Split into current and next tokens
-      let current = <span class="cstat-no" title="statement not covered" >null;</span>
-      const next = <span class="cstat-no" title="statement not covered" >[];</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      for (const token of tokens) {</span>
-<span class="cstat-no" title="statement not covered" >        if (token.status === 'in-progress' &amp;&amp; !current) {</span>
-<span class="cstat-no" title="statement not covered" >          current = token;</span>
-        } else {
-<span class="cstat-no" title="statement not covered" >          next.push(token);</span>
-        }
-      }
-&nbsp;
-      // Calculate average service time for EWT
-      const avgServiceTime = <span class="cstat-no" title="statement not covered" >await this.calculateAverageServiceTimeForDepartment(departmentCode);</span>
-&nbsp;
-      // Calculate estimated wait times with prep status consideration
-      let cumulativeEWT = <span class="cstat-no" title="statement not covered" >0;</span>
-      const tokensWithEWT = <span class="cstat-no" title="statement not covered" >next.map(<span class="fstat-no" title="function not covered" >(t</span>oken, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        cumulativeEWT += avgServiceTime;</span>
-        
-        const estimatedCompletionTime = <span class="cstat-no" title="statement not covered" >new Date();</span>
-<span class="cstat-no" title="statement not covered" >        estimatedCompletionTime.setMinutes(</span>
-          estimatedCompletionTime.getMinutes() + cumulativeEWT
-        );
-&nbsp;
-<span class="cstat-no" title="statement not covered" >        return {</span>
-          ...token,
-          position: index + 1,
-          estimatedWaitMinutes: cumulativeEWT,
-          estimatedCompletionTime: estimatedCompletionTime.toISOString()
-        };
-      });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      return {</span>
-        department: {
-          code: departmentCode,
-          name: department.name
-        },
-        currentToken: current ? {
-          ...current,
-          estimatedWaitMinutes: 0,
-          estimatedCompletionTime: null
-        } : null,
-        nextTokens: tokensWithEWT,
-        totalPending: tokensWithEWT.length,
-        totalInProgress: current ? 1 : 0,
-        averageServiceTimeMinutes: avgServiceTime,
-        statistics: {
-          waitingCount: tokensWithEWT.filter(<span class="fstat-no" title="function not covered" >t </span>=&gt; <span class="cstat-no" title="statement not covered" >t.prepStatus === 'waiting')</span>.length,
-          inPrepCount: tokensWithEWT.filter(<span class="fstat-no" title="function not covered" >t </span>=&gt; <span class="cstat-no" title="statement not covered" >t.prepStatus === 'in-prep')</span>.length,
-          readyCount: tokensWithEWT.filter(<span class="fstat-no" title="function not covered" >t </span>=&gt; <span class="cstat-no" title="statement not covered" >t.prepStatus === 'ready')</span>.length
-        }
-      };
-    } catch (error) {
-<span class="cstat-no" title="statement not covered" >      logger.error('Failed to fetch department queue for nurse', {</span>
+      // Step 4: Calculate EWT for this follow-up
+      const ewtData = await this.calculateFollowupEWT(
         departmentCode,
-        filters,
-        error: error.message,
-        stack: error.stack
+        service.priority || <span class="branch-1 cbranch-no" title="branch not covered" >mapping.default_priority,</span>
+        {
+          estimatedDuration: service.estimated_duration || mapping.estimated_duration,
+          patientId: patientData.patientId
+        }
+      );
+&nbsp;
+      // Step 5: Get queue position
+      const queuePosition = await this.getQueuePosition(
+        departmentCode,
+        service.priority || <span class="branch-1 cbranch-no" title="branch not covered" >mapping.default_priority</span>
+      );
+&nbsp;
+      // Step 6: Create token in database via Patient model
+      const patient = await Patient.findOne({ patientId: patientData.patientId });
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (!patient) {
+<span class="cstat-no" title="statement not covered" >        throw new Error(`Patient not found: ${patientData.patientId}`);</span>
+      }
+&nbsp;
+      // Issue the token using Patient model method
+      patient.issueToken(
+        departmentCode,
+        tokenStr,
+        1 // stage
+      );
+&nbsp;
+      // Step 7: Link to parent token
+      patient.linkFollowupToken(tokenStr, parentTokenId, {
+        service_type: service.service_type,
+        priority: service.priority || <span class="branch-1 cbranch-no" title="branch not covered" >mapping.default_priority,</span>
+        initial_ewt: ewtData.ewt_minutes
       });
-<span class="cstat-no" title="statement not covered" >      throw error;</span>
+&nbsp;
+      // Save patient to persist all changes atomically
+      await patient.save();
+&nbsp;
+      followupEventLogger.logParentChildLinking({
+        parent_token_id: parentTokenId,
+        followup_token_id: tokenStr,
+        patient_id: patientData.patientId,
+        service_type: service.service_type,
+        correlation_id: correlationId
+      });
+&nbsp;
+      // Log token creation
+      followupEventLogger.logFollowupTokenCreated({
+        token: tokenStr,
+        parent_token_id: parentTokenId,
+        patient_id: patientData.patientId,
+        service_type: service.service_type,
+        department: departmentCode,
+        priority: service.priority || <span class="branch-1 cbranch-no" title="branch not covered" >mapping.default_priority,</span>
+        initial_ewt: ewtData.ewt_minutes,
+        queue_position: queuePosition,
+        correlation_id: correlationId
+      });
+&nbsp;
+      // Log queue assignment
+      followupEventLogger.logQueueAssignment({
+        token: tokenStr,
+        department: departmentCode,
+        service_type: service.service_type,
+        priority: service.priority || <span class="branch-1 cbranch-no" title="branch not covered" >mapping.default_priority,</span>
+        queue_position: queuePosition,
+        ewt_minutes: ewtData.ewt_minutes,
+        correlation_id: correlationId
+      });
+&nbsp;
+      logger.info(`Follow-up token created successfully: ${tokenStr}`, {
+        parent_token: parentTokenId,
+        department: departmentCode,
+        service_type: service.service_type,
+        ewt: ewtData.ewt_minutes,
+        correlation_id: correlationId
+      });
+&nbsp;
+      return {
+        token: tokenStr,
+        parent_token_id: parentTokenId,
+        department: departmentCode,
+        service_type: service.service_type,
+        priority: service.priority || <span class="branch-1 cbranch-no" title="branch not covered" >mapping.default_priority,</span>
+        initial_ewt: ewtData.ewt_minutes,
+        queue_position: queuePosition,
+        created_at: new Date().toISOString()
+      };
+    } catch (error) {
+      logger.error('Failed to create single followup token', {
+        parent_token: parentTokenId,
+        service_type: service.service_type,
+        error: error.message,
+        correlation_id: correlationId
+      });
+&nbsp;
+      throw error;
     }
   }
 &nbsp;
   /**
-   * Calculate average service time for a department
-   * @param {string} departmentCode - Department code
-   * @returns {Promise&lt;number&gt;} Average service time in minutes
+   * Calculate EWT for a follow-up token
+   * Considers:
+   * - Current queue state
+   * - Service priority
+   * - Available staff
+   * - Estimated service duration
+   *
+   * @param {string} departmentCode - Target department
+   * @param {string} priority - Service priority (high, normal, low)
+   * @param {Object} serviceConfig - Service configuration
+   * @returns {Promise&lt;Object&gt;} { ewt_minutes, factors: {} }
    */
-  async calculateAverageServiceTimeForDepartment(departmentCode) {
+  async calculateFollowupEWT(departmentCode, priority, serviceConfig = {}) {
     try {
-      const thirtyDaysAgo = new Date();
-      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+      // Get base EWT from existing service
+      const avgServiceTime = await queueService.calculateAverageServiceTime(departmentCode);
 &nbsp;
-      // Find completed tokens in the last 30 days
+      // Get available staff
+      const department = await Department.findOne({ code: departmentCode });
+      let availableStaff = 1;
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (department) {
+        try {
+          availableStaff = await staffStatusService.getAvailableStaffCount(department._id);
+        } catch (err) {
+<span class="cstat-no" title="statement not covered" >          logger.warn('Failed to get available staff count', {</span>
+            department: departmentCode,
+            error: err.message
+          });
+        }
+      }
+&nbsp;
+      // Get current queue count
       const patients = await Patient.find({
         'multiStageTokens.department': departmentCode,
-        'multiStageTokens.status': 'completed',
-        'multiStageTokens.completedAt': { $gte: thirtyDaysAgo }
+        'multiStageTokens.status': { $in: ['pending', 'in-progress'] }
       })
         .select('multiStageTokens')
         .lean();
 &nbsp;
-      const serviceTimes = [];
-&nbsp;
+      let pendingCount = 0;
       for (const patient of patients) {
         for (const token of patient.multiStageTokens) {
           <span class="missing-if-branch" title="else path not taken" >E</span>if (
             token.department === departmentCode &amp;&amp;
-            token.status === 'completed' &amp;&amp;
-            token.issuedAt &amp;&amp;
-            token.completedAt
+            token.status === 'pending'
           ) {
-            const serviceTime =
-              (new Date(token.completedAt) - new Date(token.issuedAt)) /
-              (1000 * 60); // Convert to minutes
-&nbsp;
-            <span class="missing-if-branch" title="else path not taken" >E</span>if (serviceTime &gt; 0 &amp;&amp; serviceTime &lt; 120) {
-              // Sanity check: 0-120 mins
-              serviceTimes.push(serviceTime);
-            }
+            pendingCount++;
           }
         }
       }
 &nbsp;
-      if (serviceTimes.length === 0) {
-        // Default fallback: 5 minutes
-        return 5;
-      }
+      // Priority multipliers
+      const priorityMultipliers = {
+        high: 0.5, // High priority shortens wait time
+        normal: 1.0,
+        low: 1.5 // Low priority increases wait time
+      };
 &nbsp;
-      // Calculate average
-      const avgTime = serviceTimes.reduce((a, b) =&gt; a + b, 0) / serviceTimes.length;
-      return Math.round(avgTime);
-    } catch (error) {
-<span class="cstat-no" title="statement not covered" >      logger.error('Failed to calculate average service time for department', {</span>
-        departmentCode,
-        error: error.message
-      });
-<span class="cstat-no" title="statement not covered" >      return 5; </span>// Default fallback
-    }
-  }
+      const multiplier = priorityMultipliers[priority] || <span class="branch-1 cbranch-no" title="branch not covered" >1.0;</span>
 &nbsp;
-  /**
-   * Update token prep status for a nurse
-   * @param {string} staffId - Staff ObjectId
-   * @param {string} tokenId - Token string
-   * @param {string} departmentCode - Department code
-   * @param {string} newPrepStatus - New prep status (waiting, in-prep, ready, completed)
-   * @param {string} notes - Optional notes
-   * @returns {Promise&lt;Object&gt;} Updated token data
-   */
-  async updateTokenPrepStatus(
-    staffId,
-    tokenId,
-    departmentCode,
-    newPrepStatus,
-    notes = ''
-  ) {
-    try {
-      // Verify nurse has access to this department
-      const departments = await this.getNurseDepartments(staffId);
-      if (!departments.includes(departmentCode)) {
-        throw new Error(
-          `Nurse does not have access to department ${departmentCode}`
-        );
-      }
+      // Calculate EWT with priority adjustment
+      const baseEWT = pendingCount * avgServiceTime.averageServiceTime;
+      const priorityAdjustedEWT = baseEWT * multiplier;
 &nbsp;
-      // Find patient with this token
-      const patient = await Patient.findOne({
-        'multiStageTokens.token': tokenId,
-        'multiStageTokens.department': departmentCode
-      });
+      // Adjust by staff availability
+      const staffAdjustment = Math.max(availableStaff, 1);
+      const adjustedEWT = priorityAdjustedEWT / staffAdjustment;
 &nbsp;
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (!patient) {
-<span class="cstat-no" title="statement not covered" >        throw new Error(</span>
-          `Token ${tokenId} not found in department ${departmentCode}`
-        );
-      }
-&nbsp;
-      // Update prep status using the model method
-      patient.updatePrepStatus(tokenId, departmentCode, newPrepStatus, staffId, notes);
-      await patient.save();
-&nbsp;
-      // Fetch and return updated token data
-      const tokenEntry = patient.multiStageTokens.find(
-        t =&gt; t.token === tokenId &amp;&amp; t.department === departmentCode
-      );
+      // Add estimated service duration for this specific service
+      const estimatedDuration = serviceConfig.estimatedDuration || avgServiceTime.averageServiceTime;
+      const finalEWT = Math.ceil(adjustedEWT + (estimatedDuration / 3)); // Add 1/3 of service duration
 &nbsp;
       return {
-        success: true,
-        token: tokenId,
-        department: departmentCode,
-        prepStatus: tokenEntry.prepStatus,
-        status: tokenEntry.status,
-        patientId: patient.patientId,
-        patientName: `${patient.firstName} ${patient.lastName}`,
-        timestamp: new Date().toISOString()
-      };
-    } catch (error) {
-      logger.error('Failed to update token prep status', {
-        staffId,
-        tokenId,
-        departmentCode,
-        newPrepStatus,
-        error: error.message,
-        stack: error.stack
-      });
-      throw error;
-    }
-  }
-&nbsp;
-  /**
-   * Get detailed token information for nurse
-   * @param {string} staffId - Staff ObjectId
-   * @param {string} tokenId - Token string
-   * @param {string} departmentCode - Department code
-   * @returns {Promise&lt;Object&gt;} Detailed token information including audit history
-   */
-  async getTokenDetails(staffId, tokenId, departmentCode) {
-    try {
-      // Verify nurse has access to this department
-      const departments = await this.getNurseDepartments(staffId);
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (!departments.includes(departmentCode)) {
-<span class="cstat-no" title="statement not covered" >        throw new Error(</span>
-          `Nurse does not have access to department ${departmentCode}`
-        );
-      }
-&nbsp;
-      // Find patient with this token
-      const patient = await Patient.findOne({
-        'multiStageTokens.token': tokenId,
-        'multiStageTokens.department': departmentCode
-      }).lean();
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      if (!patient) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(</span>
-          `Token ${tokenId} not found in department ${departmentCode}`
-        );
-      }
-&nbsp;
-      const tokenEntry = <span class="cstat-no" title="statement not covered" >patient.multiStageTokens.find(</span>
-<span class="fstat-no" title="function not covered" >        t </span>=&gt; <span class="cstat-no" title="statement not covered" >t.token === tokenId &amp;&amp; t.department === departmentCode</span>
-      );
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      return {</span>
-        success: true,
-        token: {
-          token: tokenEntry.token,
-          department: tokenEntry.department,
-          status: tokenEntry.status,
-          prepStatus: tokenEntry.prepStatus,
-          stage: tokenEntry.stage,
-          createdAt: tokenEntry.createdAt,
-          issuedAt: tokenEntry.issuedAt,
-          prepStartedAt: tokenEntry.prepStartedAt,
-          prepReadyAt: tokenEntry.prepReadyAt,
-          completedAt: tokenEntry.completedAt,
-          auditHistory: tokenEntry.auditHistory || []
-        },
-        patient: {
-          id: patient.patientId,
-          name: `${patient.firstName} ${patient.lastName}`,
-          dateOfBirth: patient.dateOfBirth,
-          gender: patient.gender,
-          contactNumber: patient.contactNumber
+        ewt_minutes: Math.max(finalEWT, 5), // Minimum 5 minutes
+        factors: {
+          base_ewt: Math.ceil(baseEWT),
+          priority: priority,
+          priority_multiplier: multiplier,
+          available_staff: staffAdjustment,
+          pending_tokens: pendingCount,
+          average_service_time: avgServiceTime.averageServiceTime,
+          estimated_service_duration: estimatedDuration,
+          staff_adjustment_factor: staffAdjustment
         }
       };
     } catch (error) {
-      logger.error('Failed to fetch token details', {
-        staffId,
-        tokenId,
-        departmentCode,
-        error: error.message,
-        stack: error.stack
+      logger.error('Failed to calculate followup EWT', {
+        department: departmentCode,
+        priority,
+        error: error.message
       });
-      throw error;
+&nbsp;
+      // Return default EWT on error
+      return {
+        ewt_minutes: 15,
+        factors: {
+          error: error.message,
+          default_fallback: true
+        }
+      };
+    }
+  }
+&nbsp;
+  /**
+   * Get queue position for a token in a department
+   * Considers priority level
+   *
+   * @param {string} departmentCode - Department code
+   * @param {string} priority - Priority level
+   * @returns {Promise&lt;number&gt;} Queue position
+   */
+  async getQueuePosition(departmentCode, priority) {
+    try {
+      // Get all pending tokens in department
+      const patients = await Patient.find({
+        'multiStageTokens.department': departmentCode,
+        'multiStageTokens.status': 'pending'
+      })
+        .select('multiStageTokens')
+        .lean();
+&nbsp;
+      let queueCount = 0;
+      for (const patient of patients) {
+        for (const token of patient.multiStageTokens) {
+          if (
+            token.department === departmentCode &amp;&amp;
+            token.status === 'pending'
+          ) {
+            queueCount++;
+          }
+        }
+      }
+&nbsp;
+      // Position is current count + 1 (this token will be added)
+      // Priority doesn't change position calculation, just affects EWT
+      return queueCount + 1;
+    } catch (error) {
+      logger.error('Failed to get queue position', {
+        department: departmentCode,
+        error: error.message
+      });
+&nbsp;
+      // Return safe default
+      return 1;
+    }
+  }
+&nbsp;
+  /**
+   * Process follow-ups triggered on service completion
+   * Called by DWE when a consultation is completed
+   *
+   * @param {string} completedTokenId - Token that was just completed
+   * @param {string} patientId - Patient ID
+   * @param {Array} followupServices - Services required after completion
+   * @returns {Promise&lt;Object&gt;} Follow-up processing results
+   */
+  async processServiceCompletionFollowups(completedTokenId, patientId, followupServices) {
+    try {
+      const correlationId = followupEventLogger.generateCorrelationId();
+&nbsp;
+      logger.info('Processing automatic follow-ups on service completion', {
+        completed_token: completedTokenId,
+        patient_id: patientId,
+        followup_count: followupServices?.length || <span class="branch-1 cbranch-no" title="branch not covered" >0,</span>
+        correlation_id: correlationId
+      });
+&nbsp;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (!followupServices || followupServices.length === 0) {
+<span class="cstat-no" title="statement not covered" >        logger.debug('No follow-up services to process');</span>
+<span class="cstat-no" title="statement not covered" >        return { created: [], failed: [] };</span>
+      }
+&nbsp;
+      const patient = await Patient.findOne({ patientId });
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (!patient) {
+<span class="cstat-no" title="statement not covered" >        throw new Error(`Patient not found: ${patientId}`);</span>
+      }
+&nbsp;
+      // Generate follow-ups
+      const result = await this.generateFollowupTokens(
+        completedTokenId,
+        followupServices,
+        { patientId },
+        { correlationId }
+      );
+&nbsp;
+      followupEventLogger.logServiceCompletionWithFollowups({
+        token: completedTokenId,
+        patient_id: patientId,
+        followup_services: followupServices,
+        correlation_id: correlationId
+      });
+&nbsp;
+      return result;
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      logger.error('Failed to process service completion follow-ups', {</span>
+        completed_token: completedTokenId,
+        patient_id: patientId,
+        error: error.message
+      });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      throw error;</span>
     }
   }
 }
 &nbsp;
-module.exports = new NurseQueueService();
+// Export singleton instance
+module.exports = new FollowupTokenGenerationService();
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

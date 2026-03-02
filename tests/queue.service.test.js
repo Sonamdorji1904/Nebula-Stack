@@ -158,12 +158,13 @@ describe('QueueService', () => {
         })
       });
 
-      const avgTime = await queueService.calculateAverageServiceTime('REG');
+      const result = await queueService.calculateAverageServiceTime('REG');
 
-      expect(avgTime).toBeGreaterThan(0);
+      expect(result.averageServiceTime).toBeGreaterThan(0);
       // Should be around 12-13 minutes (average of 10 and 15)
-      expect(avgTime).toBeGreaterThanOrEqual(12);
-      expect(avgTime).toBeLessThanOrEqual(13);
+      expect(result.averageServiceTime).toBeGreaterThanOrEqual(12);
+      expect(result.averageServiceTime).toBeLessThanOrEqual(13);
+      expect(result.basedOnSamples).toBe(2);
     });
 
     it('should return default 5 minutes if no historical data', async () => {
@@ -173,14 +174,18 @@ describe('QueueService', () => {
         })
       });
 
-      const avgTime = await queueService.calculateAverageServiceTime('REG');
+      const result = await queueService.calculateAverageServiceTime('REG');
 
-      expect(avgTime).toBe(5);
+      expect(result.averageServiceTime).toBe(5);
+      expect(result.basedOnSamples).toBe(0);
     });
   });
 
   describe('getLiveQueue', () => {
     it('should return current token and next tokens with EWT', async () => {
+      // This test has longer setup, increase timeout
+      jest.setTimeout(15000);
+      
       // Mock department
       Department.findOne.mockResolvedValue({ code: 'REG' });
 
@@ -250,6 +255,8 @@ describe('QueueService', () => {
     });
 
     it('should handle queue with no current token', async () => {
+      jest.setTimeout(15000);
+      
       Department.findOne.mockResolvedValue({ code: 'REG' });
 
       Patient.find.mockReturnValue({

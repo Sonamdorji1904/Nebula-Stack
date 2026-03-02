@@ -6,6 +6,7 @@
 
 const Staff = require('../models/staff');
 const logger = require('../utils/logger');
+const ewtRecalculationService = require('./ewtRecalculationService');
 
 // Valid status transitions state machine
 const VALID_TRANSITIONS = {
@@ -117,6 +118,24 @@ class StaffStatusService {
         newStatus: newStatus,
         changedBy: options.changedBy || 'system'
       });
+
+      // Trigger EWT recalculation for the department
+      if (staff.department?.code) {
+        try {
+          await ewtRecalculationService.onStaffStatusChanged(
+            staff._id,
+            staff.previousStatus,
+            newStatus,
+            staff.department.code
+          );
+        } catch (ewtError) {
+          logger.error('Failed to trigger EWT recalculation', {
+            staffId: staff.staffId,
+            error: ewtError.message
+          });
+          // Don't fail the request if EWT recalculation fails
+        }
+      }
 
       return this.formatStatusResponse(staff);
     } catch (error) {

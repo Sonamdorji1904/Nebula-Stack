@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for services/followupTokenGenerationService.js</title>
+    <title>Code coverage report for services/ewtCalculationEngineService.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">services</a> followupTokenGenerationService.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">services</a> ewtCalculationEngineService.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.62% </span>
+                <span class="strong">6.53% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/116</span>
+                <span class='fraction'>10/153</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/53</span>
+                <span class='fraction'>0/89</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">7.14% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>1/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.69% </span>
+                <span class="strong">6.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/115</span>
+                <span class='fraction'>10/150</span>
             </div>
         
             
@@ -563,26 +563,114 @@
 <a name='L498'></a><a href='#L498'>498</a>
 <a name='L499'></a><a href='#L499'>499</a>
 <a name='L500'></a><a href='#L500'>500</a>
-<a name='L501'></a><a href='#L501'>501</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L501'></a><a href='#L501'>501</a>
+<a name='L502'></a><a href='#L502'>502</a>
+<a name='L503'></a><a href='#L503'>503</a>
+<a name='L504'></a><a href='#L504'>504</a>
+<a name='L505'></a><a href='#L505'>505</a>
+<a name='L506'></a><a href='#L506'>506</a>
+<a name='L507'></a><a href='#L507'>507</a>
+<a name='L508'></a><a href='#L508'>508</a>
+<a name='L509'></a><a href='#L509'>509</a>
+<a name='L510'></a><a href='#L510'>510</a>
+<a name='L511'></a><a href='#L511'>511</a>
+<a name='L512'></a><a href='#L512'>512</a>
+<a name='L513'></a><a href='#L513'>513</a>
+<a name='L514'></a><a href='#L514'>514</a>
+<a name='L515'></a><a href='#L515'>515</a>
+<a name='L516'></a><a href='#L516'>516</a>
+<a name='L517'></a><a href='#L517'>517</a>
+<a name='L518'></a><a href='#L518'>518</a>
+<a name='L519'></a><a href='#L519'>519</a>
+<a name='L520'></a><a href='#L520'>520</a>
+<a name='L521'></a><a href='#L521'>521</a>
+<a name='L522'></a><a href='#L522'>522</a>
+<a name='L523'></a><a href='#L523'>523</a>
+<a name='L524'></a><a href='#L524'>524</a>
+<a name='L525'></a><a href='#L525'>525</a>
+<a name='L526'></a><a href='#L526'>526</a>
+<a name='L527'></a><a href='#L527'>527</a>
+<a name='L528'></a><a href='#L528'>528</a>
+<a name='L529'></a><a href='#L529'>529</a>
+<a name='L530'></a><a href='#L530'>530</a>
+<a name='L531'></a><a href='#L531'>531</a>
+<a name='L532'></a><a href='#L532'>532</a>
+<a name='L533'></a><a href='#L533'>533</a>
+<a name='L534'></a><a href='#L534'>534</a>
+<a name='L535'></a><a href='#L535'>535</a>
+<a name='L536'></a><a href='#L536'>536</a>
+<a name='L537'></a><a href='#L537'>537</a>
+<a name='L538'></a><a href='#L538'>538</a>
+<a name='L539'></a><a href='#L539'>539</a>
+<a name='L540'></a><a href='#L540'>540</a>
+<a name='L541'></a><a href='#L541'>541</a>
+<a name='L542'></a><a href='#L542'>542</a>
+<a name='L543'></a><a href='#L543'>543</a>
+<a name='L544'></a><a href='#L544'>544</a>
+<a name='L545'></a><a href='#L545'>545</a>
+<a name='L546'></a><a href='#L546'>546</a>
+<a name='L547'></a><a href='#L547'>547</a>
+<a name='L548'></a><a href='#L548'>548</a>
+<a name='L549'></a><a href='#L549'>549</a>
+<a name='L550'></a><a href='#L550'>550</a>
+<a name='L551'></a><a href='#L551'>551</a>
+<a name='L552'></a><a href='#L552'>552</a>
+<a name='L553'></a><a href='#L553'>553</a>
+<a name='L554'></a><a href='#L554'>554</a>
+<a name='L555'></a><a href='#L555'>555</a>
+<a name='L556'></a><a href='#L556'>556</a>
+<a name='L557'></a><a href='#L557'>557</a>
+<a name='L558'></a><a href='#L558'>558</a>
+<a name='L559'></a><a href='#L559'>559</a>
+<a name='L560'></a><a href='#L560'>560</a>
+<a name='L561'></a><a href='#L561'>561</a>
+<a name='L562'></a><a href='#L562'>562</a>
+<a name='L563'></a><a href='#L563'>563</a>
+<a name='L564'></a><a href='#L564'>564</a>
+<a name='L565'></a><a href='#L565'>565</a>
+<a name='L566'></a><a href='#L566'>566</a>
+<a name='L567'></a><a href='#L567'>567</a>
+<a name='L568'></a><a href='#L568'>568</a>
+<a name='L569'></a><a href='#L569'>569</a>
+<a name='L570'></a><a href='#L570'>570</a>
+<a name='L571'></a><a href='#L571'>571</a>
+<a name='L572'></a><a href='#L572'>572</a>
+<a name='L573'></a><a href='#L573'>573</a>
+<a name='L574'></a><a href='#L574'>574</a>
+<a name='L575'></a><a href='#L575'>575</a>
+<a name='L576'></a><a href='#L576'>576</a>
+<a name='L577'></a><a href='#L577'>577</a>
+<a name='L578'></a><a href='#L578'>578</a>
+<a name='L579'></a><a href='#L579'>579</a>
+<a name='L580'></a><a href='#L580'>580</a>
+<a name='L581'></a><a href='#L581'>581</a>
+<a name='L582'></a><a href='#L582'>582</a>
+<a name='L583'></a><a href='#L583'>583</a>
+<a name='L584'></a><a href='#L584'>584</a>
+<a name='L585'></a><a href='#L585'>585</a>
+<a name='L586'></a><a href='#L586'>586</a>
+<a name='L587'></a><a href='#L587'>587</a>
+<a name='L588'></a><a href='#L588'>588</a>
+<a name='L589'></a><a href='#L589'>589</a>
+<a name='L590'></a><a href='#L590'>590</a>
+<a name='L591'></a><a href='#L591'>591</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -591,30 +679,40 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -624,14 +722,20 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -640,21 +744,22 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -663,36 +768,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -703,15 +821,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -721,6 +840,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -728,18 +849,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -747,14 +873,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -765,19 +899,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -788,19 +926,38 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -815,13 +972,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -833,20 +998,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -869,14 +1043,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -884,57 +1059,80 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -949,7 +1147,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -968,19 +1165,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -991,15 +1182,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1013,556 +1201,638 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// services/followupTokenGenerationService.js
-const Patient = require('../models/Patient');
-const Department = require('../models/Department');
-const followupServiceMappingService = require('./followupServiceMappingService');
-const followupEventLogger = require('../utils/followupEventLogger');
-const logger = require('../utils/logger');
-const { getNextTokenCounter } = require('./tokenCounter.service');
-const { generateToken } = require('../utils/tokenGenerator');
-const queueService = require('./queueService');
-const staffStatusService = require('./staffStatusService');
-&nbsp;
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// services/ewtCalculationEngineService.js
 /**
- * Followup Token Generation Service
- * Core DWE (Dynamic Workflow Engine) logic for creating follow-up tokens
- * Handles:
- * - Token generation with atomic counters
- * - Parent-child linking
- * - EWT calculation with priority consideration
- * - Queue assignment
- * - Transactional integrity
+ * EWT Calculation Engine Service
+ * Advanced estimations wait time calculations with multiple factors
+ * Uses historical data, queue position, staff availability, and time patterns
  */
-class FollowupTokenGenerationService {
-  /**
-   * Generate multiple follow-up tokens atomically
-   * Main DWE entry point from post-consultation trigger
-   *
-   * @param {string} parentTokenId - Token from completed consultation
-   * @param {Array} requiredServices - Array of required followup services
-   * @param {Object} patientData - Patient information
-   * @param {Object} options - Configuration options
-   * @returns {Promise&lt;Object&gt;} { successTokens: [], failedServices: [] }
-   * @throws {Error} If transaction fails
-   */
-<span class="fstat-no" title="function not covered" >  as</span>ync generateFollowupTokens(parentTokenId, requiredServices, patientData, options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-    const startTime = <span class="cstat-no" title="statement not covered" >Date.now();</span>
-    const correlationId = <span class="cstat-no" title="statement not covered" >followupEventLogger.generateCorrelationId();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      logger.info(`Starting follow-up token generation for parent: ${parentTokenId}`, {</span>
-        service_count: requiredServices.length,
-        correlation_id: correlationId
-      });
+const Patient = require('../models/Patient');
+const Staff = require('../models/staff');
+const Department = require('../models/Department');
+const HistoricalServiceTime = require('../models/HistoricalServiceTime');
+const historicalDataCollectionService = require('./historicalDataCollectionService');
+const logger = require('../utils/logger');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      followupEventLogger.logDWEProcessingStart({</span>
-        parent_token_id: parentTokenId,
-        patient_id: patientData.patientId,
-        services: requiredServices,
-        correlation_id: correlationId
-      });
+class EWTCalculationEngineService {
+  constructor() {
+    // Algorithm weights - can be tuned via configuration
+    this.weights = {
+      queue_position: 0.4, // Most important factor
+      staff_availability: 0.25, // Fewer staff = longer wait
+      historical_avg: 0.2, // Based on historical patterns
+      current_load: 0.1, // Current departmental load
+      time_pattern: 0.05 // Time-of-day variations
+    };
 &nbsp;
-      // Validate parent token exists
-      const patient = <span class="cstat-no" title="statement not covered" >await Patient.findOne({ patientId: patientData.patientId });</span>
-<span class="cstat-no" title="statement not covered" >      if (!patient) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(`Patient not found: ${patientData.patientId}`);</span>
-      }
-&nbsp;
-      const parentToken = <span class="cstat-no" title="statement not covered" >patient.multiStageTokens.find(<span class="fstat-no" title="function not covered" >t </span>=&gt; <span class="cstat-no" title="statement not covered" >t.token === parentTokenId)</span>;</span>
-<span class="cstat-no" title="statement not covered" >      if (!parentToken) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(`Parent token not found: ${parentTokenId}`);</span>
-      }
-&nbsp;
-      const successTokens = <span class="cstat-no" title="statement not covered" >[];</span>
-      const failedServices = <span class="cstat-no" title="statement not covered" >[];</span>
-&nbsp;
-      // Process each required service
-<span class="cstat-no" title="statement not covered" >      for (const service of requiredServices) {</span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-          const generatedToken = <span class="cstat-no" title="statement not covered" >await this.createFollowupToken(</span>
-            parentTokenId,
-            service,
-            patientData,
-            { correlationId, ...options }
-          );
-&nbsp;
-<span class="cstat-no" title="statement not covered" >          successTokens.push(generatedToken);</span>
-&nbsp;
-          // Re-fetch patient to get latest state
-          const updatedPatient = <span class="cstat-no" title="statement not covered" >await Patient.findOne({ patientId: patientData.patientId });</span>
-<span class="cstat-no" title="statement not covered" >          patient.multiStageTokens = updatedPatient.multiStageTokens;</span>
-        } catch (error) {
-<span class="cstat-no" title="statement not covered" >          logger.error(`Failed to create followup token for service: ${service.service_type}`, {</span>
-            error: error.message,
-            parent_token: parentTokenId,
-            patient_id: patientData.patientId,
-            correlation_id: correlationId
-          });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >          failedServices.push({</span>
-            service_type: service.service_type,
-            error: error.message,
-            timestamp: new Date().toISOString()
-          });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >          followupEventLogger.logFollowupTokenCreationFailed(</span>
-            {
-              parent_token_id: parentTokenId,
-              patient_id: patientData.patientId,
-              service_type: service.service_type,
-              correlation_id: correlationId
-            },
-            error
-          );
-        }
-      }
-&nbsp;
-      // Log completion
-      const processingTime = <span class="cstat-no" title="statement not covered" >Date.now() - startTime;</span>
-<span class="cstat-no" title="statement not covered" >      followupEventLogger.logDWEProcessingEnd({</span>
-        parent_token_id: parentTokenId,
-        patient_id: patientData.patientId,
-        created_tokens: successTokens.map(<span class="fstat-no" title="function not covered" >t </span>=&gt; <span class="cstat-no" title="statement not covered" >t.token)</span>,
-        duration_ms: processingTime,
-        status: failedServices.length === 0 ? 'success' : 'partial_success',
-        correlation_id: correlationId
-      });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      logger.info(`Follow-up token generation completed for parent: ${parentTokenId}`, {</span>
-        created: successTokens.length,
-        failed: failedServices.length,
-        processing_time_ms: processingTime,
-        correlation_id: correlationId
-      });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      return {</span>
-        successTokens,
-        failedServices,
-        processingTime,
-        correlationId,
-        status: failedServices.length === 0 ? 'success' : 'partial_success'
-      };
-    } catch (error) {
-<span class="cstat-no" title="statement not covered" >      logger.error('Failed to generate followup tokens', {</span>
-        parent_token: parentTokenId,
-        patient_id: patientData.patientId,
-        error: error.message,
-        stack: error.stack,
-        correlation_id: correlationId
-      });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      followupEventLogger.logDWEError(</span>
-        {
-          parent_token_id: parentTokenId,
-          patient_id: patientData.patientId,
-          correlation_id: correlationId
-        },
-        error
-      );
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      throw error;</span>
-    }
+    // Performance cache
+    this.estimateCache = new Map();
+    this.cacheValidityMs = 5 * 60 * 1000; // 5 minutes
   }
 &nbsp;
   /**
-   * Create a single follow-up token
-   * Handles service mapping, token generation, EWT calculation, and linking
-   *
-   * @param {string} parentTokenId - Parent token ID
-   * @param {Object} service - Service configuration
-   * @param {Object} patientData - Patient information
-   * @param {Object} options - Additional options (correlationId, etc.)
-   * @returns {Promise&lt;Object&gt;} Generated token information
+   * Main EWT calculation method
+   * @param {string} tokenId - Token to calculate EWT for
+   * @param {string} departmentCode - Department code
+   * @param {Object} options - Calculation options
+   * @returns {Promise&lt;Object&gt;} EWT data with confidence and ranges
    */
-<span class="fstat-no" title="function not covered" >  as</span>ync createFollowupToken(parentTokenId, service, patientData, options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
-    const correlationId = <span class="cstat-no" title="statement not covered" >options.correlationId || followupEventLogger.generateCorrelationId();</span>
+<span class="fstat-no" title="function not covered" >  as</span>ync calculateEWT(tokenId, departmentCode, options = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+    const {
+      percentile = <span class="branch-0 cbranch-no" title="branch not covered" >90,</span>
+      useCache = <span class="branch-0 cbranch-no" title="branch not covered" >true,</span>
+      returnRanges = <span class="branch-0 cbranch-no" title="branch not covered" >true,</span>
+      calculationMode = <span class="branch-0 cbranch-no" title="branch not covered" >'balanced' </span>// 'optimistic', 'pessimistic', 'balanced'
+    } = <span class="cstat-no" title="statement not covered" >options;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    try {</span>
-      // Step 1: Map service type to department
-      const mapping = <span class="cstat-no" title="statement not covered" >await followupServiceMappingService.getMappingByServiceType(</span>
-        service.service_type
-      );
+      // Check cache
+      const cacheKey = <span class="cstat-no" title="statement not covered" >`${tokenId}_${departmentCode}`;</span>
+<span class="cstat-no" title="statement not covered" >      if (useCache) {</span>
+        const cached = <span class="cstat-no" title="statement not covered" >this.estimateCache.get(cacheKey);</span>
+<span class="cstat-no" title="statement not covered" >        if (cached &amp;&amp; Date.now() - cached.timestamp &lt; this.cacheValidityMs) {</span>
+<span class="cstat-no" title="statement not covered" >          logger.debug('Using cached EWT estimate', { tokenId, cacheHit: true });</span>
+<span class="cstat-no" title="statement not covered" >          return cached.data;</span>
+        }
+      }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      followupEventLogger.logServiceMappingLookup(service.service_type, !!mapping);</span>
+      // Validate inputs
+      const patient = <span class="cstat-no" title="statement not covered" >await Patient.findOne({</span>
+        'activeTokens.token': tokenId
+      });
+<span class="cstat-no" title="statement not covered" >      if (!patient) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(`Token not found: ${tokenId}`);</span>
+      }
 &nbsp;
-      const departmentCode = <span class="cstat-no" title="statement not covered" >mapping.target_department;</span>
+      const token = <span class="cstat-no" title="statement not covered" >patient.activeTokens.find(<span class="fstat-no" title="function not covered" >(t</span>) =&gt; <span class="cstat-no" title="statement not covered" >t.token === tokenId)</span>;</span>
+<span class="cstat-no" title="statement not covered" >      if (!token) {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(`Token not in active tokens: ${tokenId}`);</span>
+      }
 &nbsp;
-      // Step 2: Validate department exists
+      // Get department info
       const department = <span class="cstat-no" title="statement not covered" >await Department.findOne({ code: departmentCode });</span>
 <span class="cstat-no" title="statement not covered" >      if (!department) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(`Target department not found: ${departmentCode}`);</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(`Department not found: ${departmentCode}`);</span>
       }
 &nbsp;
-      // Step 3: Generate unique token
-      const counter = <span class="cstat-no" title="statement not covered" >await getNextTokenCounter(departmentCode);</span>
-      const tokenStr = <span class="cstat-no" title="statement not covered" >generateToken(departmentCode, counter);</span>
+      // Calculate components
+      const queueData = <span class="cstat-no" title="statement not covered" >await this.getQueueData(departmentCode);</span>
+      const staffData = <span class="cstat-no" title="statement not covered" >await this.getStaffData(department._id);</span>
+      const historicalData = <span class="cstat-no" title="statement not covered" >await this.getHistoricalData(departmentCode);</span>
+      const timePattern = <span class="cstat-no" title="statement not covered" >this.getTimePattern();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      logger.debug(`Generated token: ${tokenStr}`, {</span>
-        parent_token: parentTokenId,
-        department: departmentCode,
-        correlation_id: correlationId
-      });
-&nbsp;
-      // Step 4: Calculate EWT for this follow-up
-      const ewtData = <span class="cstat-no" title="statement not covered" >await this.calculateFollowupEWT(</span>
-        departmentCode,
-        service.priority || mapping.default_priority,
-        {
-          estimatedDuration: service.estimated_duration || mapping.estimated_duration,
-          patientId: patientData.patientId
-        }
+      // Get token position
+      const tokenPosition = <span class="cstat-no" title="statement not covered" >await this.getTokenPosition(</span>
+        tokenId,
+        departmentCode
       );
 &nbsp;
-      // Step 5: Get queue position
-      const queuePosition = <span class="cstat-no" title="statement not covered" >await this.getQueuePosition(</span>
-        departmentCode,
-        service.priority || mapping.default_priority
-      );
-&nbsp;
-      // Step 6: Create token in database via Patient model
-      const patient = <span class="cstat-no" title="statement not covered" >await Patient.findOne({ patientId: patientData.patientId });</span>
-<span class="cstat-no" title="statement not covered" >      if (!patient) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(`Patient not found: ${patientData.patientId}`);</span>
-      }
-&nbsp;
-      // Issue the token using Patient model method
-<span class="cstat-no" title="statement not covered" >      patient.issueToken(</span>
-        departmentCode,
-        tokenStr,
-        1 // stage
-      );
-&nbsp;
-      // Step 7: Link to parent token
-<span class="cstat-no" title="statement not covered" >      patient.linkFollowupToken(tokenStr, parentTokenId, {</span>
-        service_type: service.service_type,
-        priority: service.priority || mapping.default_priority,
-        initial_ewt: ewtData.ewt_minutes
+      // Calculate EWT
+      const result = <span class="cstat-no" title="statement not covered" >this.applyAlgorithm({</span>
+        tokenPosition,
+        queueData,
+        staffData,
+        historicalData,
+        timePattern,
+        calculationMode,
+        percentile,
+        returnRanges,
+        token
       });
 &nbsp;
-      // Save patient to persist all changes atomically
-<span class="cstat-no" title="statement not covered" >      await patient.save();</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      followupEventLogger.logParentChildLinking({</span>
-        parent_token_id: parentTokenId,
-        followup_token_id: tokenStr,
-        patient_id: patientData.patientId,
-        service_type: service.service_type,
-        correlation_id: correlationId
+      // Cache result
+<span class="cstat-no" title="statement not covered" >      this.estimateCache.set(cacheKey, {</span>
+        data: result,
+        timestamp: Date.now()
       });
 &nbsp;
-      // Log token creation
-<span class="cstat-no" title="statement not covered" >      followupEventLogger.logFollowupTokenCreated({</span>
-        token: tokenStr,
-        parent_token_id: parentTokenId,
-        patient_id: patientData.patientId,
-        service_type: service.service_type,
-        department: departmentCode,
-        priority: service.priority || mapping.default_priority,
-        initial_ewt: ewtData.ewt_minutes,
-        queue_position: queuePosition,
-        correlation_id: correlationId
-      });
-&nbsp;
-      // Log queue assignment
-<span class="cstat-no" title="statement not covered" >      followupEventLogger.logQueueAssignment({</span>
-        token: tokenStr,
-        department: departmentCode,
-        service_type: service.service_type,
-        priority: service.priority || mapping.default_priority,
-        queue_position: queuePosition,
-        ewt_minutes: ewtData.ewt_minutes,
-        correlation_id: correlationId
-      });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      logger.info(`Follow-up token created successfully: ${tokenStr}`, {</span>
-        parent_token: parentTokenId,
-        department: departmentCode,
-        service_type: service.service_type,
-        ewt: ewtData.ewt_minutes,
-        correlation_id: correlationId
-      });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      return {</span>
-        token: tokenStr,
-        parent_token_id: parentTokenId,
-        department: departmentCode,
-        service_type: service.service_type,
-        priority: service.priority || mapping.default_priority,
-        initial_ewt: ewtData.ewt_minutes,
-        queue_position: queuePosition,
-        created_at: new Date().toISOString()
-      };
+<span class="cstat-no" title="statement not covered" >      return result;</span>
     } catch (error) {
-<span class="cstat-no" title="statement not covered" >      logger.error('Failed to create single followup token', {</span>
-        parent_token: parentTokenId,
-        service_type: service.service_type,
-        error: error.message,
-        correlation_id: correlationId
+<span class="cstat-no" title="statement not covered" >      logger.error('Failed to calculate EWT', {</span>
+        tokenId,
+        department: departmentCode,
+        error: error.message
       });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      throw error;</span>
+      // Return fallback with high uncertainty
+<span class="cstat-no" title="statement not covered" >      return this.getFallbackEWT(tokenId, departmentCode);</span>
     }
   }
 &nbsp;
   /**
-   * Calculate EWT for a follow-up token
-   * Considers:
-   * - Current queue state
-   * - Service priority
-   * - Available staff
-   * - Estimated service duration
-   *
-   * @param {string} departmentCode - Target department
-   * @param {string} priority - Service priority (high, normal, low)
-   * @param {Object} serviceConfig - Service configuration
-   * @returns {Promise&lt;Object&gt;} { ewt_minutes, factors: {} }
+   * Get queue statistics for a department
+   * @param {string} departmentCode - Department code
+   * @returns {Promise&lt;Object&gt;} Queue data
    */
-<span class="fstat-no" title="function not covered" >  as</span>ync calculateFollowupEWT(departmentCode, priority, serviceConfig = <span class="branch-0 cbranch-no" title="branch not covered" >{})</span> {
+<span class="fstat-no" title="function not covered" >  as</span>ync getQueueData(departmentCode) {
 <span class="cstat-no" title="statement not covered" >    try {</span>
-      // Get base EWT from existing service
-      const avgServiceTime = <span class="cstat-no" title="statement not covered" >await queueService.calculateAverageServiceTime(departmentCode);</span>
-&nbsp;
-      // Get available staff
-      const department = <span class="cstat-no" title="statement not covered" >await Department.findOne({ code: departmentCode });</span>
-      let availableStaff = <span class="cstat-no" title="statement not covered" >1;</span>
-<span class="cstat-no" title="statement not covered" >      if (department) {</span>
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >          availableStaff = await staffStatusService.getAvailableStaffCount(department._id);</span>
-        } catch (err) {
-<span class="cstat-no" title="statement not covered" >          logger.warn('Failed to get available staff count', {</span>
-            department: departmentCode,
-            error: err.message
-          });
-        }
-      }
-&nbsp;
-      // Get current queue count
       const patients = <span class="cstat-no" title="statement not covered" >await Patient.find({</span>
-        'multiStageTokens.department': departmentCode,
-        'multiStageTokens.status': { $in: ['pending', 'in-progress'] }
+        'activeTokens.department': departmentCode,
+        'activeTokens.status': { $in: ['pending', 'in-progress'] }
       })
-        .select('multiStageTokens')
+        .select('activeTokens')
         .lean();
 &nbsp;
       let pendingCount = <span class="cstat-no" title="statement not covered" >0;</span>
+      let inProgressCount = <span class="cstat-no" title="statement not covered" >0;</span>
+      let currentTokenOnly = <span class="cstat-no" title="statement not covered" >null;</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >      for (const patient of patients) {</span>
-<span class="cstat-no" title="statement not covered" >        for (const token of patient.multiStageTokens) {</span>
-<span class="cstat-no" title="statement not covered" >          if (</span>
-            token.department === departmentCode &amp;&amp;
-            token.status === 'pending'
-          ) {
-<span class="cstat-no" title="statement not covered" >            pendingCount++;</span>
+<span class="cstat-no" title="statement not covered" >        for (const token of patient.activeTokens) {</span>
+<span class="cstat-no" title="statement not covered" >          if (token.department === departmentCode) {</span>
+<span class="cstat-no" title="statement not covered" >            if (token.status === 'pending') {</span>
+<span class="cstat-no" title="statement not covered" >              pendingCount++;</span>
+            } else <span class="cstat-no" title="statement not covered" >if (token.status === 'in-progress') {</span>
+<span class="cstat-no" title="statement not covered" >              inProgressCount++;</span>
+<span class="cstat-no" title="statement not covered" >              if (!currentTokenOnly) {</span>
+<span class="cstat-no" title="statement not covered" >                currentTokenOnly = {</span>
+                  token: token.token,
+                  issuedAt: token.issuedAt,
+                  elapsedMinutes: (Date.now() - new Date(token.issuedAt)) / 60000
+                };
+              }
+            }
           }
         }
       }
 &nbsp;
-      // Priority multipliers
-      const priorityMultipliers = <span class="cstat-no" title="statement not covered" >{</span>
-        high: 0.5, // High priority shortens wait time
-        normal: 1.0,
-        low: 1.5 // Low priority increases wait time
-      };
-&nbsp;
-      const multiplier = <span class="cstat-no" title="statement not covered" >priorityMultipliers[priority] || 1.0;</span>
-&nbsp;
-      // Calculate EWT with priority adjustment
-      const baseEWT = <span class="cstat-no" title="statement not covered" >pendingCount * avgServiceTime.averageServiceTime;</span>
-      const priorityAdjustedEWT = <span class="cstat-no" title="statement not covered" >baseEWT * multiplier;</span>
-&nbsp;
-      // Adjust by staff availability
-      const staffAdjustment = <span class="cstat-no" title="statement not covered" >Math.max(availableStaff, 1);</span>
-      const adjustedEWT = <span class="cstat-no" title="statement not covered" >priorityAdjustedEWT / staffAdjustment;</span>
-&nbsp;
-      // Add estimated service duration for this specific service
-      const estimatedDuration = <span class="cstat-no" title="statement not covered" >serviceConfig.estimatedDuration || avgServiceTime.averageServiceTime;</span>
-      const finalEWT = <span class="cstat-no" title="statement not covered" >Math.ceil(adjustedEWT + (estimatedDuration / 3));</span> // Add 1/3 of service duration
+      // Calculate queue pressure (0-1)
+      const queuePressure = <span class="cstat-no" title="statement not covered" >Math.min(1, (pendingCount + inProgressCount) / 20);</span> // Normalize to 20 tokens
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      return {</span>
-        ewt_minutes: Math.max(finalEWT, 5), // Minimum 5 minutes
-        factors: {
-          base_ewt: Math.ceil(baseEWT),
-          priority: priority,
-          priority_multiplier: multiplier,
-          available_staff: staffAdjustment,
-          pending_tokens: pendingCount,
-          average_service_time: avgServiceTime.averageServiceTime,
-          estimated_service_duration: estimatedDuration,
-          staff_adjustment_factor: staffAdjustment
-        }
+        pendingCount,
+        inProgressCount,
+        totalActive: pendingCount + inProgressCount,
+        queuePressure,
+        currentToken: currentTokenOnly
       };
     } catch (error) {
-<span class="cstat-no" title="statement not covered" >      logger.error('Failed to calculate followup EWT', {</span>
+<span class="cstat-no" title="statement not covered" >      logger.error('Failed to get queue data', {</span>
         department: departmentCode,
-        priority,
         error: error.message
       });
-&nbsp;
-      // Return default EWT on error
 <span class="cstat-no" title="statement not covered" >      return {</span>
-        ewt_minutes: 15,
-        factors: {
-          error: error.message,
-          default_fallback: true
-        }
+        pendingCount: 0,
+        inProgressCount: 0,
+        totalActive: 0,
+        queuePressure: 0,
+        currentToken: null
       };
     }
   }
 &nbsp;
   /**
-   * Get queue position for a token in a department
-   * Considers priority level
-   *
-   * @param {string} departmentCode - Department code
-   * @param {string} priority - Priority level
-   * @returns {Promise&lt;number&gt;} Queue position
+   * Get staff availability data
+   * @param {string} departmentId - Department MongoDB ID
+   * @returns {Promise&lt;Object&gt;} Staff data
    */
-<span class="fstat-no" title="function not covered" >  as</span>ync getQueuePosition(departmentCode, priority) {
+<span class="fstat-no" title="function not covered" >  as</span>ync getStaffData(departmentId) {
 <span class="cstat-no" title="statement not covered" >    try {</span>
-      // Get all pending tokens in department
+      const staffMembers = <span class="cstat-no" title="statement not covered" >await Staff.find({</span>
+        department: departmentId,
+        isActive: true,
+        isOnDuty: true
+      }).select('currentStatus staffId');
+&nbsp;
+      const statusCounts = <span class="cstat-no" title="statement not covered" >{</span>
+        available: 0,
+        busy: 0,
+        onBreak: 0,
+        offline: 0
+      };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      for (const staff of staffMembers) {</span>
+<span class="cstat-no" title="statement not covered" >        switch (staff.currentStatus) {</span>
+          case 'available':
+<span class="cstat-no" title="statement not covered" >            statusCounts.available++;</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+          case 'busy':
+<span class="cstat-no" title="statement not covered" >            statusCounts.busy++;</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+          case 'on-break':
+<span class="cstat-no" title="statement not covered" >            statusCounts.onBreak++;</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+          case 'offline':
+<span class="cstat-no" title="statement not covered" >            statusCounts.offline++;</span>
+<span class="cstat-no" title="statement not covered" >            break;</span>
+        }
+      }
+&nbsp;
+      const totalStaff = <span class="cstat-no" title="statement not covered" >staffMembers.length;</span>
+      const availableStaff = <span class="cstat-no" title="statement not covered" >statusCounts.available;</span>
+      const effectiveStaff = <span class="cstat-no" title="statement not covered" >availableStaff + statusCounts.busy * 0.5;</span> // Busy staff are partially effective
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        totalStaff,
+        availableStaff,
+        busyStaff: statusCounts.busy,
+        onBreakStaff: statusCounts.onBreak,
+        offlineStaff: statusCounts.offline,
+        effectiveStaff: Math.max(0.5, effectiveStaff), // At least 0.5
+        staffUtilization: totalStaff &gt; 0 ? statusCounts.busy / totalStaff : 0
+      };
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      logger.error('Failed to get staff data', {</span>
+        department: departmentId,
+        error: error.message
+      });
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        totalStaff: 1,
+        availableStaff: 1,
+        busyStaff: 0,
+        onBreakStaff: 0,
+        offlineStaff: 0,
+        effectiveStaff: 1,
+        staffUtilization: 0
+      };
+    }
+  }
+&nbsp;
+  /**
+   * Get historical service time data
+   * @param {string} departmentCode - Department code
+   * @returns {Promise&lt;Object&gt;} Historical data
+   */
+<span class="fstat-no" title="function not covered" >  as</span>ync getHistoricalData(departmentCode) {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const estimate = <span class="cstat-no" title="statement not covered" >await historicalDataCollectionService.getBestEstimate(</span>
+        departmentCode,
+        'General',
+        { useTimeOfDay: true, percentile: 90 }
+      );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        mean: estimate.baseEstimate,
+        percentile90: estimate.estimate,
+        confidence: estimate.confidence,
+        sampleCount: estimate.sampleCount,
+        source: estimate.source
+      };
+    } catch (error) {
+<span class="cstat-no" title="statement not covered" >      logger.error('Failed to get historical data', {</span>
+        department: departmentCode,
+        error: error.message
+      });
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        mean: 5,
+        percentile90: 8,
+        confidence: 0.2,
+        sampleCount: 0,
+        source: 'default_error'
+      };
+    }
+  }
+&nbsp;
+  /**
+   * Get time-of-day adjustment factor
+   * Accounts for peak vs off-peak hours
+   * @returns {Object} Time pattern data
+   */
+<span class="fstat-no" title="function not covered" >  ge</span>tTimePattern() {
+    const now = <span class="cstat-no" title="statement not covered" >new Date();</span>
+    const hour = <span class="cstat-no" title="statement not covered" >now.getHours();</span>
+    const dayOfWeek = <span class="cstat-no" title="statement not covered" >now.getDay();</span>
+&nbsp;
+    // Peak hours: 9-11am, 2-4pm typically busier
+    let peakFactor = <span class="cstat-no" title="statement not covered" >1.0;</span>
+<span class="cstat-no" title="statement not covered" >    if ((hour &gt;= 9 &amp;&amp; hour &lt; 12) || (hour &gt;= 14 &amp;&amp; hour &lt; 16)) {</span>
+<span class="cstat-no" title="statement not covered" >      peakFactor = 1.3; </span>// 30% longer during peak
+    } else <span class="cstat-no" title="statement not covered" >if ((hour &gt;= 6 &amp;&amp; hour &lt; 9) || (hour &gt;= 4 &amp;&amp; hour &lt; 6)) {</span>
+<span class="cstat-no" title="statement not covered" >      peakFactor = 1.15; </span>// 15% longer during shoulder hours
+    } else <span class="cstat-no" title="statement not covered" >if (hour &gt;= 18 || hour &lt; 6) {</span>
+<span class="cstat-no" title="statement not covered" >      peakFactor = 0.7; </span>// 30% shorter during off-hours
+    }
+&nbsp;
+    // Weekend factor (typically less busy)
+    const weekendFactor = <span class="cstat-no" title="statement not covered" >dayOfWeek === 0 || dayOfWeek === 6 ? 0.85 : 1.0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      hour,
+      dayOfWeek,
+      peakFactor,
+      weekendFactor,
+      combinedFactor: peakFactor * weekendFactor
+    };
+  }
+&nbsp;
+  /**
+   * Get this token's position in queue
+   * @param {string} tokenId - Token ID
+   * @param {string} departmentCode - Department code
+   * @returns {Promise&lt;number&gt;} Queue position (1-indexed)
+   */
+<span class="fstat-no" title="function not covered" >  as</span>ync getTokenPosition(tokenId, departmentCode) {
+<span class="cstat-no" title="statement not covered" >    try {</span>
       const patients = <span class="cstat-no" title="statement not covered" >await Patient.find({</span>
-        'multiStageTokens.department': departmentCode,
-        'multiStageTokens.status': 'pending'
+        'activeTokens.department': departmentCode,
+        'activeTokens.status': { $in: ['pending', 'in-progress'] }
       })
-        .select('multiStageTokens')
+        .select('activeTokens')
         .lean();
 &nbsp;
-      let queueCount = <span class="cstat-no" title="statement not covered" >0;</span>
+      const tokens = <span class="cstat-no" title="statement not covered" >[];</span>
 <span class="cstat-no" title="statement not covered" >      for (const patient of patients) {</span>
-<span class="cstat-no" title="statement not covered" >        for (const token of patient.multiStageTokens) {</span>
+<span class="cstat-no" title="statement not covered" >        for (const token of patient.activeTokens) {</span>
 <span class="cstat-no" title="statement not covered" >          if (</span>
             token.department === departmentCode &amp;&amp;
-            token.status === 'pending'
+            ['pending', 'in-progress'].includes(token.status)
           ) {
-<span class="cstat-no" title="statement not covered" >            queueCount++;</span>
+<span class="cstat-no" title="statement not covered" >            tokens.push({</span>
+              token: token.token,
+              createdAt: token.createdAt,
+              status: token.status,
+              priority: token.followup_priority || 'normal'
+            });
           }
         }
       }
 &nbsp;
-      // Position is current count + 1 (this token will be added)
-      // Priority doesn't change position calculation, just affects EWT
-<span class="cstat-no" title="statement not covered" >      return queueCount + 1;</span>
+      // Sort by creation time (FIFO) but consider priority
+<span class="cstat-no" title="statement not covered" >      tokens.sort(<span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (a.status !== b.status) {</span>
+          // In-progress comes first
+<span class="cstat-no" title="statement not covered" >          return a.status === 'in-progress' ? -1 : 1;</span>
+        }
+&nbsp;
+        // Within same status, sort by priority then by time
+        const priorityMap = <span class="cstat-no" title="statement not covered" >{ high: 0, normal: 1, low: 2 };</span>
+        const priorityDiff =
+<span class="cstat-no" title="statement not covered" >          priorityMap[a.priority] - priorityMap[b.priority];</span>
+<span class="cstat-no" title="statement not covered" >        if (priorityDiff !== 0) <span class="cstat-no" title="statement not covered" >return priorityDiff;</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return new Date(a.createdAt) - new Date(b.createdAt);</span>
+      });
+&nbsp;
+      const position = <span class="cstat-no" title="statement not covered" >tokens.findIndex(<span class="fstat-no" title="function not covered" >(t</span>) =&gt; <span class="cstat-no" title="statement not covered" >t.token === tokenId)</span> + 1;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      return Math.max(1, position); </span>// At least position 1
     } catch (error) {
-<span class="cstat-no" title="statement not covered" >      logger.error('Failed to get queue position', {</span>
+<span class="cstat-no" title="statement not covered" >      logger.error('Failed to get token position', {</span>
+        tokenId,
         department: departmentCode,
         error: error.message
       });
-&nbsp;
-      // Return safe default
 <span class="cstat-no" title="statement not covered" >      return 1;</span>
     }
   }
 &nbsp;
   /**
-   * Process follow-ups triggered on service completion
-   * Called by DWE when a consultation is completed
-   *
-   * @param {string} completedTokenId - Token that was just completed
-   * @param {string} patientId - Patient ID
-   * @param {Array} followupServices - Services required after completion
-   * @returns {Promise&lt;Object&gt;} Follow-up processing results
+   * Apply weighted algorithm to calculate EWT
+   * @param {Object} components - All calculation components
+   * @returns {Object} EWT calculation result
    */
-<span class="fstat-no" title="function not covered" >  as</span>ync processServiceCompletionFollowups(completedTokenId, patientId, followupServices) {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      const correlationId = <span class="cstat-no" title="statement not covered" >followupEventLogger.generateCorrelationId();</span>
+<span class="fstat-no" title="function not covered" >  ap</span>plyAlgorithm(components) {
+    const {
+      tokenPosition,
+      queueData,
+      staffData,
+      historicalData,
+      timePattern,
+      calculationMode,
+      percentile,
+      returnRanges,
+      token
+    } = <span class="cstat-no" title="statement not covered" >components;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      logger.info('Processing automatic follow-ups on service completion', {</span>
-        completed_token: completedTokenId,
-        patient_id: patientId,
-        followup_count: followupServices?.length || 0,
-        correlation_id: correlationId
-      });
+    // Base calculation: tokens ahead * avg service time
+    let baseEWT = <span class="cstat-no" title="statement not covered" >0;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (!followupServices || followupServices.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >        logger.debug('No follow-up services to process');</span>
-<span class="cstat-no" title="statement not covered" >        return { created: [], failed: [] };</span>
-      }
-&nbsp;
-      const patient = <span class="cstat-no" title="statement not covered" >await Patient.findOne({ patientId });</span>
-<span class="cstat-no" title="statement not covered" >      if (!patient) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(`Patient not found: ${patientId}`);</span>
-      }
-&nbsp;
-      // Generate follow-ups
-      const result = <span class="cstat-no" title="statement not covered" >await this.generateFollowupTokens(</span>
-        completedTokenId,
-        followupServices,
-        { patientId },
-        { correlationId }
+<span class="cstat-no" title="statement not covered" >    if (tokenPosition === 1 &amp;&amp; queueData.inProgressCount === 0) {</span>
+      // First in queue with no current service
+<span class="cstat-no" title="statement not covered" >      baseEWT = 0;</span>
+    } else <span class="cstat-no" title="statement not covered" >if (tokenPosition === 1 &amp;&amp; queueData.currentToken) {</span>
+      // Current token being served
+      const remainingMinutes = <span class="cstat-no" title="statement not covered" >Math.max(</span>
+        0,
+        historicalData.percentile90 - queueData.currentToken.elapsedMinutes
       );
+<span class="cstat-no" title="statement not covered" >      baseEWT = Math.ceil(remainingMinutes);</span>
+    } else {
+      // Tokens ahead need to be served
+      const tokensAhead = <span class="cstat-no" title="statement not covered" >tokenPosition - 1;</span> // Subtract self
+<span class="cstat-no" title="statement not covered" >      baseEWT =</span>
+        tokensAhead *
+        historicalData.percentile90;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      followupEventLogger.logServiceCompletionWithFollowups({</span>
-        token: completedTokenId,
-        patient_id: patientId,
-        followup_services: followupServices,
-        correlation_id: correlationId
-      });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      return result;</span>
-    } catch (error) {
-<span class="cstat-no" title="statement not covered" >      logger.error('Failed to process service completion follow-ups', {</span>
-        completed_token: completedTokenId,
-        patient_id: patientId,
-        error: error.message
-      });
-&nbsp;
-<span class="cstat-no" title="statement not covered" >      throw error;</span>
+      // Add time for current token if being served
+<span class="cstat-no" title="statement not covered" >      if (queueData.currentToken) {</span>
+        const remainingMinutes = <span class="cstat-no" title="statement not covered" >Math.max(</span>
+          0,
+          historicalData.percentile90 -
+            queueData.currentToken.elapsedMinutes
+        );
+<span class="cstat-no" title="statement not covered" >        baseEWT += Math.ceil(remainingMinutes);</span>
+      }
     }
+&nbsp;
+    // Staff availability adjustment
+    const staffFactor = <span class="cstat-no" title="statement not covered" >Math.max(0.3, 1 / staffData.effectiveStaff);</span>
+&nbsp;
+    // Queue pressure adjustment
+    const pressureFactor = <span class="cstat-no" title="statement not covered" >1 + queueData.queuePressure * 0.5;</span>
+&nbsp;
+    // Time pattern adjustment
+    const timeAdjustment = <span class="cstat-no" title="statement not covered" >timePattern.combinedFactor;</span>
+&nbsp;
+    // Confidence-based adjustment
+    const confidenceAdjustment = <span class="cstat-no" title="statement not covered" >0.8 + historicalData.confidence * 0.2;</span>
+&nbsp;
+    // Calculate final EWT
+    let ewt = <span class="cstat-no" title="statement not covered" >baseEWT * staffFactor * pressureFactor * timeAdjustment;</span>
+&nbsp;
+    // Apply calculation mode
+<span class="cstat-no" title="statement not covered" >    switch (calculationMode) {</span>
+      case 'optimistic':
+<span class="cstat-no" title="statement not covered" >        ewt = Math.ceil(ewt * 0.8); </span>// 20% reduction
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case 'pessimistic':
+<span class="cstat-no" title="statement not covered" >        ewt = Math.ceil(ewt * 1.2); </span>// 20% increase
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case 'balanced':
+      default:
+<span class="cstat-no" title="statement not covered" >        ewt = Math.ceil(ewt);</span>
+    }
+&nbsp;
+    // Ensure minimum of 1 minute if there's a queue
+<span class="cstat-no" title="statement not covered" >    if (queueData.totalActive &gt; 0 &amp;&amp; ewt === 0) {</span>
+<span class="cstat-no" title="statement not covered" >      ewt = 1;</span>
+    }
+&nbsp;
+    // Cap at reasonable maximum (480 minutes = 8 hours)
+<span class="cstat-no" title="statement not covered" >    ewt = Math.min(ewt, 480);</span>
+&nbsp;
+    // Calculate confidence range if requested
+    let uncertaintyRange = <span class="cstat-no" title="statement not covered" >null;</span>
+<span class="cstat-no" title="statement not covered" >    if (returnRanges) {</span>
+      const variance =
+<span class="cstat-no" title="statement not covered" >        historicalData.confidence &lt; 0.5</span>
+          ? 0.4
+          : (1 - historicalData.confidence) * 0.6;
+      const lowerBound = <span class="cstat-no" title="statement not covered" >Math.max(0, Math.ceil(ewt * (1 - variance)));</span>
+      const upperBound = <span class="cstat-no" title="statement not covered" >Math.ceil(ewt * (1 + variance));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      uncertaintyRange = {</span>
+        lower: lowerBound,
+        upper: upperBound,
+        confidence: historicalData.confidence
+      };
+    }
+&nbsp;
+    // Calculate detailed breakdown for logging
+    const breakdown = <span class="cstat-no" title="statement not covered" >{</span>
+      baseEWT: Math.ceil(baseEWT),
+      staffFactor: Math.round(staffFactor * 100) / 100,
+      pressureFactor: Math.round(pressureFactor * 100) / 100,
+      timeAdjustment: Math.round(timeAdjustment * 100) / 100,
+      confidenceAdjustment: Math.round(confidenceAdjustment * 100) / 100
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      ewt: Math.max(0, ewt),
+      tokenPosition,
+      confidence: historicalData.confidence,
+      uncertaintyRange,
+      breakdown,
+      calculatedAt: new Date(),
+      baseEstimate: historicalData.percentile90,
+      historicalSamples: historicalData.sampleCount,
+      queueStats: {
+        pending: queueData.pendingCount,
+        inProgress: queueData.inProgressCount,
+        pressure: Math.round(queueData.queuePressure * 100)
+      },
+      staffStats: {
+        available: staffData.availableStaff,
+        total: staffData.totalStaff,
+        utilization: Math.round(staffData.staffUtilization * 100)
+      },
+      timeInfo: {
+        hour: timePattern.hour,
+        dayOfWeek: timePattern.dayOfWeek,
+        isPeakHour: timePattern.peakFactor &gt; 1.1,
+        isMaintenance: false
+      }
+    };
+  }
+&nbsp;
+  /**
+   * Get fallback EWT for error conditions
+   * @param {string} tokenId - Token ID
+   * @param {string} departmentCode - Department code
+   * @returns {Object} Fallback EWT data
+   */
+<span class="fstat-no" title="function not covered" >  ge</span>tFallbackEWT(tokenId, departmentCode) {
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      ewt: 10, // 10 minute default
+      tokenPosition: -1,
+      confidence: 0.1,
+      uncertaintyRange: {
+        lower: 5,
+        upper: 20,
+        confidence: 0.1
+      },
+      breakdown: {
+        baseEWT: 10,
+        staffFactor: 1,
+        pressureFactor: 1,
+        timeAdjustment: 1,
+        confidenceAdjustment: 0.1
+      },
+      calculatedAt: new Date(),
+      baseEstimate: 10,
+      historicalSamples: 0,
+      queueStats: {
+        pending: -1,
+        inProgress: -1,
+        pressure: 0
+      },
+      staffStats: {
+        available: -1,
+        total: -1,
+        utilization: 0
+      },
+      timeInfo: {
+        hour: new Date().getHours(),
+        dayOfWeek: new Date().getDay(),
+        isPeakHour: false,
+        isMaintenance: false
+      },
+      error: 'Fallback calculation due to error',
+      tokenId,
+      department: departmentCode
+    };
+  }
+&nbsp;
+  /**
+   * Clear the cache
+   * Useful for testing or forcing recalculation
+   */
+<span class="fstat-no" title="function not covered" >  cl</span>earCache() {
+<span class="cstat-no" title="statement not covered" >    this.estimateCache.clear();</span>
+<span class="cstat-no" title="statement not covered" >    logger.info('EWT calculation cache cleared');</span>
+  }
+&nbsp;
+  /**
+   * Set algorithm weights
+   * @param {Object} weights - New weights object
+   */
+<span class="fstat-no" title="function not covered" >  se</span>tWeights(weights) {
+<span class="cstat-no" title="statement not covered" >    if (</span>
+      !weights ||
+      typeof weights !== 'object'
+    ) {
+<span class="cstat-no" title="statement not covered" >      throw new Error('Invalid weights object');</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.weights = { ...this.weights, ...weights };</span>
+<span class="cstat-no" title="statement not covered" >    logger.info('EWT algorithm weights updated', { weights: this.weights });</span>
   }
 }
 &nbsp;
-// Export singleton instance
-module.exports = new FollowupTokenGenerationService();
+module.exports = new EWTCalculationEngineService();
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->

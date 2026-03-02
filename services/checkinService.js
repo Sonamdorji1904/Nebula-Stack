@@ -11,6 +11,10 @@ const { generateToken } = require('../utils/tokenGenerator');
 // NEW: Import queue socket handler for real-time updates
 const queueSocketHandler = require('../utils/queueSocketHandler');
 
+// NEW: Import EWT services for event triggers
+const ewtRecalculationService = require('./ewtRecalculationService');
+const ewtMetricsCollector = require('../utils/ewtMetricsCollector');
+
 class CheckinService {
   constructor() {
     this.mockEpisUrl = process.env.MOCK_EPIS_URL || 'http://localhost:3000/api/mock-epis/checkin';
@@ -136,9 +140,10 @@ class CheckinService {
 
   /**
    * Update token status
-   * UPDATED: Now emits real-time queue updates
+   * UPDATED: Emits real-time queue updates and triggers EWT recalculation
    * @param {String} patientId 
    * @param {String} token 
+   * @param {String} department
    * @param {String} newStatus 
    * @returns {Object} Updated patient
    */
@@ -150,6 +155,10 @@ class CheckinService {
         throw new Error(`Patient not found: ${patientId}`);
       }
 
+      // Find the token to track completion time
+      const activeToken = patient.activeTokens.find(t => t.token === token);
+      let actualServiceTime = null;
+
       // Update in multiStageTokens
       const multiStageToken = patient.multiStageTokens.find(t => t.token === token);
       if (multiStageToken) {
@@ -157,13 +166,22 @@ class CheckinService {
         if (newStatus === 'completed') {
           multiStageToken.completedAt = new Date();
           patient.lastStageCompletedAt = new Date();
+          
+          // Calculate actual service time
+          if (multiStageToken.issuedAt) {
+            actualServiceTime = (new Date() - new Date(multiStageToken.issuedAt)) / (1000 * 60);
+          }
         }
       }
 
       // Update in activeTokens
-      const activeToken = patient.activeTokens.find(t => t.token === token);
       if (activeToken) {
         activeToken.status = newStatus;
+        
+        // Calculate service time from activeToken
+        if (newStatus === 'completed' && activeToken.issuedAt) {
+          actualServiceTime = (new Date() - new Date(activeToken.issuedAt)) / (1000 * 60);
+        }
         
         // Remove from active if completed or cancelled
         if (newStatus === 'completed' || newStatus === 'cancelled') {
@@ -182,6 +200,36 @@ class CheckinService {
 
       patient.updatedBy = 'system'; // Or pass actual user
       await patient.save();
+
+      // Trigger EWT events
+      try {
+        if (newStatus === 'completed' && actualServiceTime) {
+          await ewtRecalculationService.onTokenCompleted(
+            token,
+            department,
+            Math.round(actualServiceTime)
+          );
+        } else if (newStatus === 'cancelled' || newStatus === 'skipped') {
+          await ewtRecalculationService.onTokenCancelled(
+            token,
+            department,
+            `Token ${newStatus}`
+          );
+        } else if (newStatus === 'pending') {
+          await ewtRecalculationService.onTokenAdded(
+            token,
+            department,
+            { priority: activeToken?.followup_priority || 'normal' }
+          );
+        }
+      } catch (ewtError) {
+        logger.error('Failed to trigger EWT event', {
+          token,
+          newStatus,
+          error: ewtError.message
+        });
+        // Don't fail the request
+      }
 
       // NEW: Emit real-time queue update
       try {

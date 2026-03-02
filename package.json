@@ -7,6 +7,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "seed": "node scripts/seedStaffCore.js",
+    "seed:followup-mappings": "node scripts/seedFollowupServiceMappings.js",
     "test": "jest --coverage --verbose",
     "test:watch": "jest --watch"
   },

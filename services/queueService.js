@@ -493,6 +493,52 @@ class QueueService {
       return [];
     }
   }
+
+  /**
+   * Get audit history for a token
+   * Returns all actions performed on a specific token
+   * @param {string} tokenId - The token ID
+   * @param {string} department - Department code
+   * @returns {Promise<Array>} Array of audit history entries
+   */
+  async getTokenAuditHistory(tokenId, department) {
+    try {
+      // Validate inputs
+      if (!tokenId || !department) {
+        throw new Error('tokenId and department are required');
+      }
+
+      // Find patient with this token
+      const patient = await Patient.findOne({
+        'multiStageTokens.token': tokenId,
+        'multiStageTokens.department': department
+      }).select('multiStageTokens');
+
+      if (!patient) {
+        throw new Error(`Token ${tokenId} not found for department ${department}`);
+      }
+
+      // Find the specific token
+      const tokenEntry = patient.multiStageTokens.find(
+        t => t.token === tokenId && t.department === department
+      );
+
+      if (!tokenEntry) {
+        throw new Error(`Token ${tokenId} not found for department ${department}`);
+      }
+
+      // Return audit history (or empty array if not present)
+      return tokenEntry.auditHistory || [];
+    } catch (error) {
+      logger.error('Failed to get token audit history', {
+        tokenId,
+        department,
+        error: error.message,
+        stack: error.stack
+      });
+      throw error;
+    }
+  }
 }
 
 module.exports = new QueueService();

@@ -85,6 +85,7 @@ const connectDB = async () => {
     require('./models/role');
     require('./models/Department');
     require('./models/staff');
+    require('./models/FollowupServiceMapping');
     logger.info('Models registered successfully');
 
   } catch (err) {

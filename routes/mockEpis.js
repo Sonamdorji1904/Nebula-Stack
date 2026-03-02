@@ -1,6 +1,7 @@
 // routes/mockEpis.js
 const express = require('express');
 const router = express.Router();
+const postConsultationController = require('../controllers/postConsultationController');
 
 // Mock ePIS check-in endpoint - returns ONLY patient demographics
 router.post('/checkin', (req, res) => {
@@ -36,5 +37,25 @@ router.post('/checkin', (req, res) => {
     message: 'Patient check-in data retrieved successfully'
   });
 });
+
+/**
+ * @route   POST /api/mock-epis/post-consultation-trigger
+ * @desc    Receive post-consultation trigger from ePIS
+ * @access  Public - From ePIS system
+ * @body    {
+ *            patient_id: string,
+ *            consultation_token_id: string,
+ *            required_next_services: [
+ *              {
+ *                service_type: string,
+ *                priority: 'high'|'normal'|'low',
+ *                estimated_duration: number,
+ *                notes: string
+ *              }
+ *            ]
+ *          }
+ * @returns {Object} Trigger processing result with created tokens
+ */
+router.post('/post-consultation-trigger', postConsultationController.postConsultationTrigger);
 
 module.exports = router;

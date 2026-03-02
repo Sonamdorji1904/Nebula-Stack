@@ -12,6 +12,9 @@ const logger = require('../utils/logger');
 jest.mock('../models/Patient');
 jest.mock('../models/Department');
 jest.mock('../utils/logger');
+jest.mock('../services/staffStatusService', () => ({
+  getAvailableStaffCount: jest.fn().mockResolvedValue(2)
+}));
 
 describe('QueueService - Skip/Reschedule Features', () => {
   let mockPatient;
@@ -22,7 +25,8 @@ describe('QueueService - Skip/Reschedule Features', () => {
     // Mock Department.findOne to always return a valid department
     Department.findOne.mockResolvedValue({
       code: 'OPD',
-      name: 'Outpatient Department'
+      name: 'Outpatient Department',
+      _id: 'DEPT_OPD_001'
     });
 
     // Setup mock patient with methods
